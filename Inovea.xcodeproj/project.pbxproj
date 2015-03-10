@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A1D7A1AAF9B420038CF18 /* Alert.m */; };
 		494099701AAF6B5F006FA051 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 4940996F1AAF6B5F006FA051 /* Container.m */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA051AAE5D7D0093C54E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA041AAE5D7D0093C54E /* AppDelegate.m */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492A1D791AAF9B420038CF18 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = Classes/Alert.h; sourceTree = "<group>"; };
+		492A1D7A1AAF9B420038CF18 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = Classes/Alert.m; sourceTree = "<group>"; };
 		4940996E1AAF6B5F006FA051 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Container.h; path = Classes/Container.h; sourceTree = "<group>"; };
 		4940996F1AAF6B5F006FA051 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Classes/Container.m; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +66,8 @@
 			children = (
 				4940996E1AAF6B5F006FA051 /* Container.h */,
 				4940996F1AAF6B5F006FA051 /* Container.m */,
+				492A1D791AAF9B420038CF18 /* Alert.h */,
+				492A1D7A1AAF9B420038CF18 /* Alert.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			files = (
 				494099701AAF6B5F006FA051 /* Container.m in Sources */,
 				4991AA051AAE5D7D0093C54E /* AppDelegate.m in Sources */,
+				492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
