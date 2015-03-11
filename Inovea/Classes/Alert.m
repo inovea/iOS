@@ -19,6 +19,8 @@
     self.idd = idd;
     self.state = state;
     self.description = description;
+    
+    return self;
 }
 
 -(long) getId{
