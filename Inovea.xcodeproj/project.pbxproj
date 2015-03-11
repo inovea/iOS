@@ -10,7 +10,6 @@
 		4925A92F1AB07F9F00E98D66 /* Circuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4925A92E1AB07F9F00E98D66 /* Circuit.m */; };
 		492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A1D7A1AAF9B420038CF18 /* Alert.m */; };
 		494099701AAF6B5F006FA051 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 4940996F1AAF6B5F006FA051 /* Container.m */; };
-		4963F3D91AB0A290001D192C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4963F3D81AB0A290001D192C /* .gitignore */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA051AAE5D7D0093C54E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA041AAE5D7D0093C54E /* AppDelegate.m */; };
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
@@ -35,7 +34,6 @@
 		492A1D7A1AAF9B420038CF18 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = Classes/Alert.m; sourceTree = "<group>"; };
 		4940996E1AAF6B5F006FA051 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Container.h; path = Classes/Container.h; sourceTree = "<group>"; };
 		4940996F1AAF6B5F006FA051 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Classes/Container.m; sourceTree = "<group>"; };
-		4963F3D81AB0A290001D192C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = Inovea/.gitignore; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991AA001AAE5D7D0093C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4991AA011AAE5D7D0093C54E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 		4991A9F31AAE5D7D0093C54E = {
 			isa = PBXGroup;
 			children = (
-				4963F3D81AB0A290001D192C /* .gitignore */,
 				4991A9FE1AAE5D7D0093C54E /* Inovea */,
 				4991AA181AAE5D7D0093C54E /* InoveaTests */,
 				4991A9FD1AAE5D7D0093C54E /* Products */,
@@ -218,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */,
-				4963F3D91AB0A290001D192C /* .gitignore in Resources */,
 				4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
