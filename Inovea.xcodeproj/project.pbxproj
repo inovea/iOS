@@ -11,6 +11,7 @@
 		492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A1D7A1AAF9B420038CF18 /* Alert.m */; };
 		494099701AAF6B5F006FA051 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 4940996F1AAF6B5F006FA051 /* Container.m */; };
 		494C77BF1AB18BBE00194A63 /* Steed.m in Sources */ = {isa = PBXBuildFile; fileRef = 494C77BE1AB18BBE00194A63 /* Steed.m */; };
+		494C77C21AB190BB00194A63 /* Scheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 494C77C11AB190BB00194A63 /* Scheduler.m */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA051AAE5D7D0093C54E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA041AAE5D7D0093C54E /* AppDelegate.m */; };
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
@@ -37,6 +38,8 @@
 		4940996F1AAF6B5F006FA051 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Classes/Container.m; sourceTree = "<group>"; };
 		494C77BD1AB18BBE00194A63 /* Steed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Steed.h; path = Classes/Steed.h; sourceTree = "<group>"; };
 		494C77BE1AB18BBE00194A63 /* Steed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Steed.m; path = Classes/Steed.m; sourceTree = "<group>"; };
+		494C77C01AB190BB00194A63 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scheduler.h; path = Classes/Scheduler.h; sourceTree = "<group>"; };
+		494C77C11AB190BB00194A63 /* Scheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scheduler.m; path = Classes/Scheduler.m; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991AA001AAE5D7D0093C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4991AA011AAE5D7D0093C54E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				4925A92E1AB07F9F00E98D66 /* Circuit.m */,
 				494C77BD1AB18BBE00194A63 /* Steed.h */,
 				494C77BE1AB18BBE00194A63 /* Steed.m */,
+				494C77C01AB190BB00194A63 /* Scheduler.h */,
+				494C77C11AB190BB00194A63 /* Scheduler.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				494099701AAF6B5F006FA051 /* Container.m in Sources */,
 				4925A92F1AB07F9F00E98D66 /* Circuit.m in Sources */,
 				4991AA051AAE5D7D0093C54E /* AppDelegate.m in Sources */,
+				494C77C21AB190BB00194A63 /* Scheduler.m in Sources */,
 				494C77BF1AB18BBE00194A63 /* Steed.m in Sources */,
 				492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,
