@@ -17,6 +17,11 @@
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
 		4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0E1AAE5D7D0093C54E /* LaunchScreen.xib */; };
 		4991AA1C1AAE5D7D0093C54E /* InoveaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */; };
+		4995B0C31AB46E8D00717A50 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995B0C11AB46E8D00717A50 /* HomeViewController.m */; };
+		4995B0C41AB46E8D00717A50 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4995B0C21AB46E8D00717A50 /* HomeViewController.xib */; };
+		49D256AF1AB5EF70009BDEA5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D256AE1AB5EF70009BDEA5 /* logo.png */; };
+		49D256B61AB5FA2A009BDEA5 /* textFieldFocused.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D256B41AB5FA2A009BDEA5 /* textFieldFocused.png */; };
+		49D256B71AB5FA2A009BDEA5 /* textFieldUnfocused.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D256B51AB5FA2A009BDEA5 /* textFieldUnfocused.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,12 @@
 		4991AA151AAE5D7D0093C54E /* InoveaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InoveaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991AA1A1AAE5D7D0093C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InoveaTests.m; sourceTree = "<group>"; };
+		4995B0C01AB46E8D00717A50 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4995B0C11AB46E8D00717A50 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4995B0C21AB46E8D00717A50 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		49D256AE1AB5EF70009BDEA5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../Documents/Logos/logo.png; sourceTree = "<group>"; };
+		49D256B41AB5FA2A009BDEA5 /* textFieldFocused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldFocused.png; path = ../../../Documents/Logos/textFieldFocused.png; sourceTree = "<group>"; };
+		49D256B51AB5FA2A009BDEA5 /* textFieldUnfocused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldUnfocused.png; path = ../../../Documents/Logos/textFieldUnfocused.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +119,17 @@
 		4991A9FE1AAE5D7D0093C54E /* Inovea */ = {
 			isa = PBXGroup;
 			children = (
+				49D256AE1AB5EF70009BDEA5 /* logo.png */,
+				49D256B41AB5FA2A009BDEA5 /* textFieldFocused.png */,
+				49D256B51AB5FA2A009BDEA5 /* textFieldUnfocused.png */,
 				4940996D1AAF69B1006FA051 /* Classes */,
 				4991AA031AAE5D7D0093C54E /* AppDelegate.h */,
 				4991AA041AAE5D7D0093C54E /* AppDelegate.m */,
 				4991AA0C1AAE5D7D0093C54E /* Images.xcassets */,
 				4991AA0E1AAE5D7D0093C54E /* LaunchScreen.xib */,
+				4995B0C01AB46E8D00717A50 /* HomeViewController.h */,
+				4995B0C11AB46E8D00717A50 /* HomeViewController.m */,
+				4995B0C21AB46E8D00717A50 /* HomeViewController.xib */,
 				4991A9FF1AAE5D7D0093C54E /* Supporting Files */,
 			);
 			path = Inovea;
@@ -224,8 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D256AF1AB5EF70009BDEA5 /* logo.png in Resources */,
 				4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */,
 				4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */,
+				49D256B61AB5FA2A009BDEA5 /* textFieldFocused.png in Resources */,
+				49D256B71AB5FA2A009BDEA5 /* textFieldUnfocused.png in Resources */,
+				4995B0C41AB46E8D00717A50 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +271,7 @@
 				494C77BF1AB18BBE00194A63 /* Steed.m in Sources */,
 				492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,
+				4995B0C31AB46E8D00717A50 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
