@@ -29,7 +29,7 @@
 
 
 
--(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname;
++(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname;
 -(long) getId;
 -(void) setIdd:(long)idd;
 -(NSString*) getMail;

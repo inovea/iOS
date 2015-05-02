@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "MenuViewController.h"
+#import "LostPasswordViewController.h"
 
 @interface HomeViewController ()
 
@@ -41,6 +43,19 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [textField setBackground:[UIImage imageNamed:@"textFieldBg2.png"]];
+}
+- (IBAction)onClickConnexion:(id)sender {
+    
+    
+    MenuViewController* menuViewController = [MenuViewController new];
+     [self.navigationController pushViewController:menuViewController animated:YES];
+    
+}
+
+- (IBAction)onClickLostPassword:(id)sender {
+    
+    LostPasswordViewController* lostPasswordViewController = [LostPasswordViewController new];
+    [self.navigationController pushViewController:lostPasswordViewController animated:YES];
 }
 
 /*
