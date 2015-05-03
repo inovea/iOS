@@ -29,16 +29,18 @@
 
 
 
-+(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname;
--(long) getId;
--(void) setIdd:(long)idd;
--(NSString*) getMail;
--(void) setMail:(NSString *)mail;
--(NSString*) getPassword;
--(void) setPassword:(NSString *)password;
--(NSString*) getName;
--(void) setName:(NSString *)name;
--(NSString*) getFirstname;
--(void) setFirstname:(NSString *)firstname;
+-(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname;
+
+//
+//-(long) getId;
+//-(void) setIdd:(long)idd;
+//-(NSString*) getMail;
+//-(void) setMail:(NSString *)mail;
+//-(NSString*) getPassword;
+//-(void) setPassword:(NSString *)password;
+//-(NSString*) getName;
+//-(void) setName:(NSString *)name;
+//-(NSString*) getFirstname;
+//-(void) setFirstname:(NSString *)firstname;
 
 @end

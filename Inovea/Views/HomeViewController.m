@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "MenuViewController.h"
 #import "LostPasswordViewController.h"
+#import "Steed.h"
+#import "Connexion.h"
 
 @interface HomeViewController ()
 
@@ -18,11 +20,11 @@
 
 - (void)viewDidLoad {
     
-    self.tbmdp.delegate = self;
-    self.tbpseudo.delegate = self;
+    self.tbPassword.delegate = self;
+    self.tbMail.delegate = self;
     
-    [self.tbpseudo setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    [self.tbmdp setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbMail setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbPassword setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
     [super viewDidLoad];
     
     
@@ -46,10 +48,23 @@
 }
 - (IBAction)onClickConnexion:(id)sender {
     
+    Steed* steed = [Steed new];
+    steed = [Connexion loginWithMail:self.tbMail.text andPassword:self.tbPassword.text];
     
-    MenuViewController* menuViewController = [MenuViewController new];
-     [self.navigationController pushViewController:menuViewController animated:YES];
     
+    if(steed == nil)
+    {
+        NSLog(@"Echec de connexion");
+    }
+    
+    else
+    {
+        NSLog(@"%@", steed.firstname);
+        MenuViewController* menuViewController = [MenuViewController new];
+        menuViewController.steed = steed;
+        [self.navigationController pushViewController:menuViewController animated:YES];
+    }
+  
 }
 
 - (IBAction)onClickLostPassword:(id)sender {
@@ -69,3 +84,4 @@
 */
 
 @end
+

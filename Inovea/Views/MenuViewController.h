@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Steed.h"
 
 @interface MenuViewController : UIViewController
+{
+@private
+    Steed* steed_;
+}
+
+@property (nonatomic, strong) Steed* steed;
 @property (weak, nonatomic) IBOutlet UIButton *trajetsAttenteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *trajetsTerminesBtn;
 @property (weak, nonatomic) IBOutlet UIButton *parametresBtn;

@@ -15,37 +15,38 @@
 @synthesize  containers = containers_;
 
 
--(id)initCircuitWithId:(long)idd andState:(Boolean)state andContainers:(NSMutableDictionary*)containers{
+-(id)initCircuitWithId:(long)idd andState:(Boolean)state andContainers:(NSMutableDictionary*)containers andDate:(NSDate *)date{
     
 self = [super init];
 self.idd = idd;
 self.state = state;
 self.containers = containers;
+    self.date = date;
     
 return self;
 }
-
--(long) getId{
-    return self.idd;
-}
-
--(void) setId:(long)idd{
-    self.idd = idd;
-}
-
--(Boolean) isState{
-    return self.state;
-}
-
--(void) setState:(Boolean)state{
-    self.state = state;
-}
-
--(NSMutableDictionary*) getContainers{
-    return self.containers;
-}
-
--(void) setContainers:(NSMutableDictionary *)containers{
-    self.containers = containers;
-}
+//
+//-(long) getId{
+//    return self.idd;
+//}
+//
+//-(void) setId:(long)idd{
+//    self.idd = idd;
+//}
+//
+//-(Boolean) isState{
+//    return self.state;
+//}
+//
+//-(void) setState:(Boolean)state{
+//    self.state = state;
+//}
+//
+//-(NSMutableDictionary*) getContainers{
+//    return self.containers;
+//}
+//
+//-(void) setContainers:(NSMutableDictionary *)containers{
+//    self.containers = containers;
+//}
 @end

@@ -28,55 +28,55 @@
     self.alerts = alerts;
     return self;
 }
-
-
--(long) getId{
-    return self.idd;
-}
-
--(void) setIdd:(long)idd{
-    self.idd = idd;
-}
-
--(NSString*) getLat{
-    return self.lat;
-}
-
--(void) setLat:(NSString*)lat{
-    self.lat = lat;
-}
-
--(NSString*) getLng{
-    return self.lng;
-}
-
--(void) setLng:(NSString *)lng{
-    self.lng = lng;
-}
-
--(NSString*) getAddress{
-    return self.address;
-}
-
--(void) setAddress:(NSString*)address{
-    self.address = address;
-}
-
--(Boolean) isState{
-    return self.state;
-}
-
--(void) setState:(Boolean)state{
-    self.state = state;
-}
-
--(NSArray*) getAlerts{
-    return self.alerts;
-}
-
--(void) setAlerts:(NSArray *)alerts{
-    self.alerts = alerts;
-}
+//
+//
+//-(long) getId{
+//    return self.idd;
+//}
+//
+//-(void) setIdd:(long)idd{
+//    self.idd = idd;
+//}
+//
+//-(NSString*) getLat{
+//    return self.lat;
+//}
+//
+//-(void) setLat:(NSString*)lat{
+//    self.lat = lat;
+//}
+//
+//-(NSString*) getLng{
+//    return self.lng;
+//}
+//
+//-(void) setLng:(NSString *)lng{
+//    self.lng = lng;
+//}
+//
+//-(NSString*) getAddress{
+//    return self.address;
+//}
+//
+//-(void) setAddress:(NSString*)address{
+//    self.address = address;
+//}
+//
+//-(Boolean) isState{
+//    return self.state;
+//}
+//
+//-(void) setState:(Boolean)state{
+//    self.state = state;
+//}
+//
+//-(NSArray*) getAlerts{
+//    return self.alerts;
+//}
+//
+//-(void) setAlerts:(NSArray *)alerts{
+//    self.alerts = alerts;
+//}
 
 @end
 

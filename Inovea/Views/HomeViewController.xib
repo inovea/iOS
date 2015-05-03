@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="tbmdp" destination="67v-qM-xf9" id="fJt-uc-ENu"/>
-                <outlet property="tbpseudo" destination="05o-ev-uoQ" id="Nke-Qf-ngF"/>
+                <outlet property="tbMail" destination="05o-ev-uoQ" id="cjV-cv-hBz"/>
+                <outlet property="tbPassword" destination="67v-qM-xf9" id="Z4Y-PX-LRH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,7 +38,7 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mot de passe" minimumFontSize="17" background="textFieldUnfocused.png" id="67v-qM-xf9">
                     <rect key="frame" x="53" y="266" width="216" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
@@ -48,7 +48,7 @@
                     <color key="backgroundColor" red="0.0" green="0.37176452020202022" blue="0.16714614891709018" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.93525487101572746" green="0.96030061215566054" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Connexion">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

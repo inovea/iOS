@@ -27,23 +27,23 @@
 @property (nonatomic, strong) NSArray* alerts;
 
 -(id)initContainerWithId :(long)idd andLat:(NSString*)lat andLng: (NSString*)lng andAddress: (NSString*)address andState: (Boolean)state andAlerts:(NSArray*)alerts;
-
--(long) getId;
--(void) setIdd:(long)idd;
-
--(NSString*) getLat;
--(void) setLat:(NSString*)lat;
-
--(NSString*) getLng;
--(void) setLng:(NSString *)lng;
-
--(NSString*) getAddress;
--(void) setAddress:(NSString*)address;
-
--(Boolean) isState;
--(void) setState:(Boolean)state;
-
--(NSArray*) getAlerts;
--(void) setAlerts:(NSArray *)alerts;
-
+//
+//-(long) getId;
+//-(void) setIdd:(long)idd;
+//
+//-(NSString*) getLat;
+//-(void) setLat:(NSString*)lat;
+//
+//-(NSString*) getLng;
+//-(void) setLng:(NSString *)lng;
+//
+//-(NSString*) getAddress;
+//-(void) setAddress:(NSString*)address;
+//
+//-(Boolean) isState;
+//-(void) setState:(Boolean)state;
+//
+//-(NSArray*) getAlerts;
+//-(void) setAlerts:(NSArray *)alerts;
+//
 @end

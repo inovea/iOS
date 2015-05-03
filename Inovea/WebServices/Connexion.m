@@ -12,11 +12,15 @@
 
 + (Steed*) loginWithMail: (NSString*) mail andPassword: (NSString*) password{
     
-    NSString* name = @"Jean";
-    NSString* firstname = @"Dupont";
     
-    Steed* steed = [Steed initSteedWithMail:mail andPassword:password andName:name andFirstname:firstname];
-    return steed;
+    if([mail  isEqual: @"a"] && [password  isEqual: @"aa"])
+    {
+        Steed* steed = [Steed new];
+        steed = [steed initSteedWithMail:mail andPassword:password andName:@"Dupont" andFirstname:@"Jean"];
+        return steed;
+    }
+    
+    return nil;
  
 };
 

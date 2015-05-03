@@ -62,7 +62,6 @@
                     </state>
                     <connections>
                         <action selector="onClickParameters:" destination="-1" eventType="touchUpInside" id="J8q-S6-zVH"/>
-                        <action selector="parametresAction:" destination="-1" eventType="touchUpInside" id="e0a-7D-5Ik"/>
                     </connections>
                 </button>
             </subviews>

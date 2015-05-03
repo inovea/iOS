@@ -7,6 +7,7 @@
 //
 
 #import "ParametersViewController.h"
+#import "ChangePasswordViewController.h"
 
 @interface ParametersViewController ()
 
@@ -14,11 +15,10 @@
 
 @implementation ParametersViewController
 
+@synthesize steed = steed_;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    
     
     self.view.backgroundColor = [UIColor clearColor];
 }
@@ -26,6 +26,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClickSwitchNotifications:(id)sender {
+    
+   if([sender isOn])
+    NSLog(@"Switch : ON");
+    
+    else
+        NSLog(@"Switch : OFF");
+        
+}
+- (IBAction)onClickChangePassword:(id)sender {
+    
+    ChangePasswordViewController* changePasswordViewController = [ChangePasswordViewController new];
+    changePasswordViewController.steed = self.steed;
+    [self.navigationController pushViewController:changePasswordViewController animated:NO];
 }
 
 /*

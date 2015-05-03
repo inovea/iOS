@@ -41,6 +41,8 @@
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
 		4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0E1AAE5D7D0093C54E /* LaunchScreen.xib */; };
 		4991AA1C1AAE5D7D0093C54E /* InoveaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */; };
+		49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */; };
+		49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,9 @@
 		4991AA151AAE5D7D0093C54E /* InoveaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InoveaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991AA1A1AAE5D7D0093C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InoveaTests.m; sourceTree = "<group>"; };
+		49A583B51AF64387001E8C72 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = Views/ChangePasswordViewController.h; sourceTree = "<group>"; };
+		49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = Views/ChangePasswordViewController.m; sourceTree = "<group>"; };
+		49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChangePasswordViewController.xib; path = Views/ChangePasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +152,9 @@
 				492A800A1AF3FC940078F481 /* TrajetsFinisViewController.h */,
 				492A800B1AF3FC940078F481 /* TrajetsFinisViewController.m */,
 				492A800C1AF3FC940078F481 /* TrajetsFinisViewController.xib */,
+				49A583B51AF64387001E8C72 /* ChangePasswordViewController.h */,
+				49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */,
+				49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 				4953D09B1AF4173800BC1AFA /* icon_3.png in Resources */,
 				4953D0991AF4173800BC1AFA /* icon_1.png in Resources */,
 				4953D0911AF4152500BC1AFA /* map search 2.png in Resources */,
+				49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */,
 				4953D0921AF4152500BC1AFA /* profile2.png in Resources */,
 				4953D09A1AF4173800BC1AFA /* icon_2.png in Resources */,
 				4953D0931AF4152500BC1AFA /* textFieldFocused.png in Resources */,
@@ -374,6 +383,7 @@
 				4925A92F1AB07F9F00E98D66 /* Circuit.m in Sources */,
 				492A801A1AF3FC940078F481 /* TrajetsFinisViewController.m in Sources */,
 				494C77BF1AB18BBE00194A63 /* Steed.m in Sources */,
+				49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */,
 				492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */,
 				492A80181AF3FC940078F481 /* TrajetsAttenteViewController.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,

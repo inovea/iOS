@@ -17,6 +17,8 @@
 
 @implementation MenuViewController
 
+@synthesize steed = steed_;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -54,6 +56,7 @@
 
 - (IBAction)onClickParameters:(id)sender {
     ParametersViewController* parametersViewController = [ParametersViewController new];
+    parametersViewController.steed = self.steed;
     [self.navigationController pushViewController:parametersViewController animated:NO];
 }
 
