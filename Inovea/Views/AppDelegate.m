@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    CGRect screen = [UIScreen mainScreen].bounds;
+    UIWindow* window = [[UIWindow alloc] initWithFrame:screen];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[HomeViewController new]];
+//    window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"fond_ecran_projet_ios.jpg"]];
+    window.backgroundColor = [UIColor colorWithRed:0.078 green:0.310 blue:0.157 alpha:1];
+    
+    [window makeKeyAndVisible];
+    
+    self.window = window;
+    
     return YES;
 }
 
