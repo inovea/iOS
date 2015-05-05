@@ -37,6 +37,7 @@
 		4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09C1AF41F8500BC1AFA /* icon_1-1.png */; };
 		4953D0A01AF41F8500BC1AFA /* icon_2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09D1AF41F8500BC1AFA /* icon_2-1.png */; };
 		4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09E1AF41F8500BC1AFA /* icon_3-1.png */; };
+		4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4984611A1AF8F10B00AB7AE9 /* WebService.m */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
 		4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0E1AAE5D7D0093C54E /* LaunchScreen.xib */; };
@@ -98,6 +99,8 @@
 		4953D09C1AF41F8500BC1AFA /* icon_1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_1-1.png"; path = "Images/icon_1-1.png"; sourceTree = "<group>"; };
 		4953D09D1AF41F8500BC1AFA /* icon_2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_2-1.png"; path = "Images/icon_2-1.png"; sourceTree = "<group>"; };
 		4953D09E1AF41F8500BC1AFA /* icon_3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_3-1.png"; path = "Images/icon_3-1.png"; sourceTree = "<group>"; };
+		498461191AF8F10B00AB7AE9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebService.h; path = WebServices/WebService.h; sourceTree = "<group>"; };
+		4984611A1AF8F10B00AB7AE9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebService.m; path = WebServices/WebService.m; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4991AA001AAE5D7D0093C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4991AA011AAE5D7D0093C54E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 			children = (
 				492A80311AF401F40078F481 /* Connexion.h */,
 				492A80321AF401F40078F481 /* Connexion.m */,
+				498461191AF8F10B00AB7AE9 /* WebService.h */,
+				4984611A1AF8F10B00AB7AE9 /* WebService.m */,
 			);
 			name = WebServices;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				492A80111AF3FC940078F481 /* LostPasswordViewController.m in Sources */,
 				492A80161AF3FC940078F481 /* ParametersViewController.m in Sources */,
 				492A800D1AF3FC940078F481 /* AppDelegate.m in Sources */,
+				4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */,
 				492A80141AF3FC940078F481 /* MenuViewController.m in Sources */,
 				492A800E1AF3FC940078F481 /* HomeViewController.m in Sources */,
 			);

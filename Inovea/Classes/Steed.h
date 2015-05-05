@@ -12,7 +12,7 @@
 {
     
     @private
-    long idd_;
+    int idd_;
     NSString* mail_;
     NSString* password_;
     NSString* name_;
@@ -20,16 +20,16 @@
     NSMutableDictionary* circuits_;
 }
 
-@property(nonatomic, assign)long idd;
-@property(nonatomic, strong)NSString* mail;
-@property(nonatomic, strong)NSString* password;
+@property(nonatomic, assign)int idd;
 @property(nonatomic, strong)NSString* name;
 @property(nonatomic, strong)NSString* firstname;
+@property(nonatomic, strong)NSString* mail;
+@property(nonatomic, strong)NSString* password;
 @property(nonatomic, strong)NSMutableDictionary* circuits;
 
 
 
--(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname;
+-(id) initSteedWithId:(int)idd andMail:(NSString*)mail andName:(NSString*)name andFirstname:(NSString*)firstname;
 
 //
 //-(long) getId;

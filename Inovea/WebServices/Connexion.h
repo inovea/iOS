@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Steed.h"
 
+#import "WebService.h"
+
 @interface Connexion : NSObject
 + (Steed*) loginWithMail: (NSString*)mail andPassword: (NSString*)password;
 @end

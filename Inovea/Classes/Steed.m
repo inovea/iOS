@@ -18,11 +18,11 @@
 @synthesize password = password_;
 @synthesize circuits = circuits_;
 
--(id) initSteedWithMail:(NSString*)mail andPassword:(NSString*)password andName:(NSString*)name andFirstname:(NSString*)firstname{
+-(id) initSteedWithId:(int)idd andMail:(NSString*)mail andName:(NSString*)name andFirstname:(NSString*)firstname{
 
     self = [super init];
+    self.idd = idd;
     self.mail = mail;
-    self.password = password;
     self.name = name;
     self.firstname = firstname;
     return self;

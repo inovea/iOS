@@ -52,14 +52,8 @@
     steed = [Connexion loginWithMail:self.tbMail.text andPassword:self.tbPassword.text];
     
     
-    if(steed == nil)
+    if(steed != nil)
     {
-        NSLog(@"Echec de connexion");
-    }
-    
-    else
-    {
-        NSLog(@"%@", steed.firstname);
         MenuViewController* menuViewController = [MenuViewController new];
         menuViewController.steed = steed;
         [self.navigationController pushViewController:menuViewController animated:YES];

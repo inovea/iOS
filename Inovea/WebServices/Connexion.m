@@ -7,18 +7,46 @@
 //
 
 #import "Connexion.h"
-
+#import "WebService.h"
 @implementation Connexion
+
+
+
+
 
 + (Steed*) loginWithMail: (NSString*) mail andPassword: (NSString*) password{
     
     
-    if([mail  isEqual: @"a"] && [password  isEqual: @"aa"])
+/* 
+    Appel WebService
+*/
+    
+   
+
+    NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/courier.php?tag=login&mail=%@&password=%@", mail, password];
+    
+    NSMutableDictionary* result = [WebService getResultWithUrl:url];
+    
+    if (result!=nil)
     {
-        Steed* steed = [Steed new];
-        steed = [steed initSteedWithMail:mail andPassword:password andName:@"Dupont" andFirstname:@"Jean"];
-        return steed;
+          if([[result valueForKey:@"error"] isEqualToString:@"0"])
+          {
+              NSLog(@"Connexion réussi");
+              Steed* steed = [Steed new];
+              steed.idd =(int)[[result objectForKey:@"user"] valueForKey:@"idCourier"];
+              steed.name =[[result objectForKey:@"user"] valueForKey:@"name"];
+              steed.firstname =[[result objectForKey:@"user"] valueForKey:@"firstname"];
+              steed.mail =[[result objectForKey:@"user"] valueForKey:@"mail"];
+              return steed;
+
+          }
+          else
+              NSLog(@"%@", [result objectForKey:@"error_msg"]);
     }
+    
+    
+    else
+        NSLog(@"WebService error");
     
     return nil;
  
