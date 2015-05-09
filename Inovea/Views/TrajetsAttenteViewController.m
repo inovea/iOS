@@ -7,8 +7,9 @@
 //
 
 #import "TrajetsAttenteViewController.h"
-#import "Circuit.h"
+#import "Errand.h"
 #import "Container.h"
+#import "WSErrand.h"
 
 @interface TrajetsAttenteViewController ()
 
@@ -19,12 +20,15 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
 @implementation TrajetsAttenteViewController
 
 
-@synthesize tabCircuits = tabCircuits_;
+@synthesize tabErrands = tabErrands_;
+@synthesize todayErrands = todayErrands_;
+@synthesize otherErrands = otherErrands_;
+@synthesize steed = steed_;
 
 
 -(void) viewWillAppear:(BOOL)animated{
     
-    [self.todayTableView reloadData];
+//    [self.todayTableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -33,40 +37,61 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
     self.view.backgroundColor = [UIColor clearColor];
     self.todayTableView.delegate = self;
     self.todayTableView.dataSource = self;
+    self.othersTableView.delegate = self;
+    self.othersTableView.dataSource = self; 
     
-    
-    
-    self.todayDate = [NSDate date];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     
 
-    NSDate *now = [self.dateFormatter dateFromString:@"1994-04-28 20:50"];
-       
-    
-    
-    
-    /* 
-        Dictionnaire de conteneurs
-    */
-    
-    NSMutableDictionary* tabContainers = [NSMutableDictionary new];
-    [tabContainers setObject:[[Container alloc] initContainerWithId:0 andLat:@"25" andLng:@"35" andAddress:@"Houilles" andState:true andAlerts:[NSArray new]] forKey:@"0"];
-    [tabContainers setObject:[[Container alloc] initContainerWithId:1 andLat:@"20" andLng:@"43" andAddress:@"Bezons" andState:true andAlerts:[NSArray new]] forKey:@"1"];
-    [tabContainers setObject:[[Container alloc] initContainerWithId:2 andLat:@"21" andLng:@"5" andAddress:@"Sartrouville" andState:true andAlerts:[NSArray new]]forKey:@"2"];
-    [tabContainers setObject:[[Container alloc] initContainerWithId:3 andLat:@"2" andLng:@"39" andAddress:@"Maisons-laffite" andState:true andAlerts:[NSArray new]]forKey:@"3"];
-    [tabContainers setObject:[[Container alloc] initContainerWithId:4 andLat:@"6" andLng:@"0" andAddress:@"Aubergenville" andState:true andAlerts:[NSArray new]]forKey:@"4"];
-        
     
     /*
-        Tableau de circuits
-    */
+     Tableau de circuits
+     */
+    self.tabErrands = [WSErrand getErrandsWithId:self.steed.idd];
     
-    self.tabCircuits = [NSMutableArray new];
-    [self.tabCircuits addObject:[[Circuit alloc] initCircuitWithId:0 andState:true andContainers:tabContainers andDate:now]];
-    [self.tabCircuits addObject:[[Circuit alloc] initCircuitWithId:1 andState:true andContainers:tabContainers andDate:now]];
-    [self.tabCircuits addObject:[[Circuit alloc] initCircuitWithId:2 andState:true andContainers:tabContainers andDate:now]];
-    [self.tabCircuits addObject:[[Circuit alloc] initCircuitWithId:3 andState:true andContainers:tabContainers andDate:self.todayDate]];
+    self.todayErrands = [NSMutableArray new];
+    self.otherErrands = [NSMutableArray new];
+    
+    
+     NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    for(Errand* errand in self.tabErrands)
+    {
+        NSDateComponents* componentsForFirstDate = [calendar components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:[errand dateDebut]];
+        NSLog(@"date course : %@", [errand dateDebut]);
+        NSDateComponents* componentsForSecondDate = [calendar components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:[NSDate date]];
+
+        
+        
+        if ([componentsForFirstDate day] == [componentsForSecondDate day] && [componentsForFirstDate month] == [componentsForSecondDate month] && [componentsForFirstDate year] == [componentsForSecondDate year])
+        {
+        
+            [self.todayErrands addObject:errand];
+            
+        }
+        else
+        {
+            [self.otherErrands addObject:errand];
+        }
+    
+        NSLog(@"today : %lu   others : %lu", (unsigned long)[self.todayErrands count], (unsigned long)[self.otherErrands count]);
+        
+    }
+
+    
+    
+   
+    
+    
+    
+    
+    
+    
+//
+//    NSDate *now = [self.dateFormatter dateFromString:@"1994-04-28 20:50"];
+//    NSLog(@"id -> %d", self.steed.idd);
+    
     
 
     // Do any additional setup after loading the view from its nib.
@@ -79,39 +104,80 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
 
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
-   NSLog(@"%lu", (unsigned long)[self.tabCircuits count]);
-    return [self.tabCircuits count];
+    
+    if(tableView == self.todayTableView)
+    return [self.todayErrands count];
+    else
+    return [self.otherErrands count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)
 tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
+    Errand* errand = [Errand new];
+    NSDateFormatter* tableViewDateFormatter = [NSDateFormatter new];
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kHomeViewControllerCellIdentifier];
     
     
-    if(cell==nil){
-        cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kHomeViewControllerCellIdentifier];
+    if(tableView == self.todayTableView){
+        //  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+        [tableViewDateFormatter setDateFormat:@"HH:mm"];
+        errand = [self.todayErrands objectAtIndex:indexPath.row];
     }
     
-//    NSArray* keys = [self.productList allKeys];
-//    NSLog(@"%lu -- %@",indexPath.row, [keys objectAtIndex:indexPath.row]);
-//
-    
-    
-    NSDateFormatter* tableViewDateFormatter = [NSDateFormatter new];
-   
-    //  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
-      [tableViewDateFormatter setDateFormat:@"HH:mm"];
+    else{
+        //  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+        [tableViewDateFormatter setDateFormat:@"dd/MM"];
+        errand = [self.otherErrands objectAtIndex:indexPath.row];
 
-    NSString *circuitDate =[tableViewDateFormatter stringFromDate:[[self.tabCircuits objectAtIndex:indexPath.row] date]];
+    }
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@   Trajet : %ld", circuitDate, [[self.tabCircuits objectAtIndex:indexPath.row] idd]];
+    NSLog(@"%@", errand);
+    if(cell==nil){
+        cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kHomeViewControllerCellIdentifier];
     
-    NSLog(@"%ld", [[self.tabCircuits objectAtIndex:indexPath.row] idd]);
+  
+        
+        
+    NSString *circuitDate =[tableViewDateFormatter stringFromDate:[errand dateDebut]];
+   
+        
+        
+        
+    int min = [errand duree];
+    int hours = 0;
+    int minutes = min;
+  
+    while(minutes >59){
+        minutes -= 60;
+        hours ++;
+    }
+    min = min - 60*hours;
+
+   
+    UILabel* errandLbl = [[UILabel alloc]initWithFrame:CGRectMake(20, 22, 140, 20)];
+    errandLbl.text = [NSString stringWithFormat:@"%@  Trajet n°%d", circuitDate, [errand idd]];
     
     
+    UILabel* dureeLbl = [[UILabel alloc]initWithFrame:CGRectMake(300, 22, 140, 20)];
+    dureeLbl.textColor = [UIColor colorWithRed:15/255. green:94/255. blue:30/255. alpha:1];
+    dureeLbl.text = [NSString stringWithFormat:@"%2.f min",[errand duree]];
+    
+    if(hours != 0)
+        dureeLbl.text = [NSString stringWithFormat:@"%dh %dmin", hours, min];
+    
+    else
+        dureeLbl.text = [NSString stringWithFormat:@"%2.f min", [errand duree]];
+
+    
+    [cell.contentView addSubview:errandLbl];
+    [cell.contentView addSubview:dureeLbl];
+
     cell.backgroundColor = [UIColor clearColor];
+        
+    }
     
     NSLog(@"%lu -- %@", indexPath.row, cell.textLabel.text);
     return cell;

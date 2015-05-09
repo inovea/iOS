@@ -33,7 +33,7 @@
           {
               NSLog(@"Connexion réussi");
               Steed* steed = [Steed new];
-              steed.idd =(int)[[result objectForKey:@"user"] valueForKey:@"idCourier"];
+              steed.idd =[[[result objectForKey:@"user"] valueForKey:@"idCourier"] intValue];
               steed.name =[[result objectForKey:@"user"] valueForKey:@"name"];
               steed.firstname =[[result objectForKey:@"user"] valueForKey:@"firstname"];
               steed.mail =[[result objectForKey:@"user"] valueForKey:@"mail"];
@@ -41,12 +41,12 @@
 
           }
           else
-              NSLog(@"%@", [result objectForKey:@"error_msg"]);
+              NSLog(@"%@", [result objectForKey:@"msg"]);
     }
     
     
     else
-        NSLog(@"WebService error");
+        NSLog(@"Connexion WebService error");
     
     return nil;
  

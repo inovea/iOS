@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4925A92F1AB07F9F00E98D66 /* Circuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4925A92E1AB07F9F00E98D66 /* Circuit.m */; };
+		4925A92F1AB07F9F00E98D66 /* Errand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4925A92E1AB07F9F00E98D66 /* Errand.m */; };
 		492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A1D7A1AAF9B420038CF18 /* Alert.m */; };
 		492A800D1AF3FC940078F481 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A7FF81AF3FC940078F481 /* AppDelegate.m */; };
 		492A800E1AF3FC940078F481 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A7FFA1AF3FC940078F481 /* HomeViewController.m */; };
@@ -37,6 +37,8 @@
 		4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09C1AF41F8500BC1AFA /* icon_1-1.png */; };
 		4953D0A01AF41F8500BC1AFA /* icon_2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09D1AF41F8500BC1AFA /* icon_2-1.png */; };
 		4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09E1AF41F8500BC1AFA /* icon_3-1.png */; };
+		49804CF91AFE1A6A003B7CB0 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */; };
+		49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */; };
 		4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4984611A1AF8F10B00AB7AE9 /* WebService.m */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
@@ -44,6 +46,7 @@
 		4991AA1C1AAE5D7D0093C54E /* InoveaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */; };
 		49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */; };
 		49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */; };
+		49F57B2A1AF9257C00228AAC /* WSErrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F57B291AF9257C00228AAC /* WSErrand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4925A92D1AB07F9F00E98D66 /* Circuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circuit.h; path = Classes/Circuit.h; sourceTree = "<group>"; };
-		4925A92E1AB07F9F00E98D66 /* Circuit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Circuit.m; path = Classes/Circuit.m; sourceTree = "<group>"; };
+		4925A92D1AB07F9F00E98D66 /* Errand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Errand.h; path = Classes/Errand.h; sourceTree = "<group>"; };
+		4925A92E1AB07F9F00E98D66 /* Errand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Errand.m; path = Classes/Errand.m; sourceTree = "<group>"; };
 		492A1D791AAF9B420038CF18 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = Classes/Alert.h; sourceTree = "<group>"; };
 		492A1D7A1AAF9B420038CF18 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = Classes/Alert.m; sourceTree = "<group>"; };
 		492A7FF71AF3FC940078F481 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Views/AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +102,9 @@
 		4953D09C1AF41F8500BC1AFA /* icon_1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_1-1.png"; path = "Images/icon_1-1.png"; sourceTree = "<group>"; };
 		4953D09D1AF41F8500BC1AFA /* icon_2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_2-1.png"; path = "Images/icon_2-1.png"; sourceTree = "<group>"; };
 		4953D09E1AF41F8500BC1AFA /* icon_3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_3-1.png"; path = "Images/icon_3-1.png"; sourceTree = "<group>"; };
+		49804CF61AFE1A6A003B7CB0 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = Views/DetailsViewController.h; sourceTree = "<group>"; };
+		49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = Views/DetailsViewController.m; sourceTree = "<group>"; };
+		49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsViewController.xib; path = Views/DetailsViewController.xib; sourceTree = "<group>"; };
 		498461191AF8F10B00AB7AE9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebService.h; path = WebServices/WebService.h; sourceTree = "<group>"; };
 		4984611A1AF8F10B00AB7AE9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebService.m; path = WebServices/WebService.m; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,8 @@
 		49A583B51AF64387001E8C72 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = Views/ChangePasswordViewController.h; sourceTree = "<group>"; };
 		49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = Views/ChangePasswordViewController.m; sourceTree = "<group>"; };
 		49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChangePasswordViewController.xib; path = Views/ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		49F57B281AF9257C00228AAC /* WSErrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSErrand.h; path = WebServices/WSErrand.h; sourceTree = "<group>"; };
+		49F57B291AF9257C00228AAC /* WSErrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSErrand.m; path = WebServices/WSErrand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,9 @@
 				49A583B51AF64387001E8C72 /* ChangePasswordViewController.h */,
 				49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */,
 				49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */,
+				49804CF61AFE1A6A003B7CB0 /* DetailsViewController.h */,
+				49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */,
+				49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +178,8 @@
 			children = (
 				492A80311AF401F40078F481 /* Connexion.h */,
 				492A80321AF401F40078F481 /* Connexion.m */,
+				49F57B281AF9257C00228AAC /* WSErrand.h */,
+				49F57B291AF9257C00228AAC /* WSErrand.m */,
 				498461191AF8F10B00AB7AE9 /* WebService.h */,
 				4984611A1AF8F10B00AB7AE9 /* WebService.m */,
 			);
@@ -180,8 +193,8 @@
 				4940996F1AAF6B5F006FA051 /* Container.m */,
 				492A1D791AAF9B420038CF18 /* Alert.h */,
 				492A1D7A1AAF9B420038CF18 /* Alert.m */,
-				4925A92D1AB07F9F00E98D66 /* Circuit.h */,
-				4925A92E1AB07F9F00E98D66 /* Circuit.m */,
+				4925A92D1AB07F9F00E98D66 /* Errand.h */,
+				4925A92E1AB07F9F00E98D66 /* Errand.m */,
 				494C77BD1AB18BBE00194A63 /* Steed.h */,
 				494C77BE1AB18BBE00194A63 /* Steed.m */,
 			);
@@ -350,6 +363,7 @@
 				4953D0941AF4152500BC1AFA /* textFieldUnfocused.png in Resources */,
 				4953D0901AF4152500BC1AFA /* logo.png in Resources */,
 				4953D09B1AF4173800BC1AFA /* icon_3.png in Resources */,
+				49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */,
 				4953D0991AF4173800BC1AFA /* icon_1.png in Resources */,
 				4953D0911AF4152500BC1AFA /* map search 2.png in Resources */,
 				49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */,
@@ -385,7 +399,7 @@
 			files = (
 				494099701AAF6B5F006FA051 /* Container.m in Sources */,
 				492A80331AF401F40078F481 /* Connexion.m in Sources */,
-				4925A92F1AB07F9F00E98D66 /* Circuit.m in Sources */,
+				4925A92F1AB07F9F00E98D66 /* Errand.m in Sources */,
 				492A801A1AF3FC940078F481 /* TrajetsFinisViewController.m in Sources */,
 				494C77BF1AB18BBE00194A63 /* Steed.m in Sources */,
 				49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */,
@@ -393,7 +407,9 @@
 				492A80181AF3FC940078F481 /* TrajetsAttenteViewController.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,
 				492A80111AF3FC940078F481 /* LostPasswordViewController.m in Sources */,
+				49804CF91AFE1A6A003B7CB0 /* DetailsViewController.m in Sources */,
 				492A80161AF3FC940078F481 /* ParametersViewController.m in Sources */,
+				49F57B2A1AF9257C00228AAC /* WSErrand.m in Sources */,
 				492A800D1AF3FC940078F481 /* AppDelegate.m in Sources */,
 				4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */,
 				492A80141AF3FC940078F481 /* MenuViewController.m in Sources */,

@@ -7,20 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Circuit.h"
+#import "Errand.h"
+#import "Steed.h"
 
 
 @interface TrajetsAttenteViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     @private
-    NSMutableArray* tabCircuits_;
-    NSDate* todayDate_;
+    NSMutableArray* tabErrands_;
+    NSMutableArray* todayErrands_;
+    NSMutableArray* otherErrands_;
     NSDateFormatter* dateFormatter_;
+    Steed* steed_;
 }
 @property (weak, nonatomic) IBOutlet UITableView *todayTableView;
-@property (nonatomic, strong) IBOutlet NSMutableArray* tabCircuits;
-@property (nonatomic, strong) NSDate* todayDate;
+@property (weak, nonatomic) IBOutlet UITableView *othersTableView;
+@property (nonatomic, strong) IBOutlet NSMutableArray* tabErrands;
+@property (nonatomic, strong) NSMutableArray* todayErrands;
+@property (nonatomic, strong) NSMutableArray* otherErrands;
 @property (nonatomic, strong) NSDateFormatter* dateFormatter;
-
+@property (nonatomic, strong) Steed* steed;
 @end
     

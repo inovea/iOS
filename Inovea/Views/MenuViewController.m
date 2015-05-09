@@ -45,6 +45,7 @@
 - (IBAction)trajetsAttenteAction:(id)sender {
     
     TrajetsAttenteViewController* trajetsAttenteViewController = [TrajetsAttenteViewController new];
+    trajetsAttenteViewController.steed = self.steed;
     [self.navigationController pushViewController:trajetsAttenteViewController animated:NO];
 }
 
