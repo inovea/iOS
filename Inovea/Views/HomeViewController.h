@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tbMail;
 @property (weak, nonatomic) IBOutlet UITextField *tbPassword;
+@property (weak, nonatomic) IBOutlet UILabel *errorLoginLbl;
+
 @end

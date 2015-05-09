@@ -26,19 +26,15 @@
 		494099701AAF6B5F006FA051 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 4940996F1AAF6B5F006FA051 /* Container.m */; };
 		494C77BF1AB18BBE00194A63 /* Steed.m in Sources */ = {isa = PBXBuildFile; fileRef = 494C77BE1AB18BBE00194A63 /* Steed.m */; };
 		4953D0901AF4152500BC1AFA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08A1AF4152500BC1AFA /* logo.png */; };
-		4953D0911AF4152500BC1AFA /* map search 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08B1AF4152500BC1AFA /* map search 2.png */; };
-		4953D0921AF4152500BC1AFA /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08C1AF4152500BC1AFA /* profile2.png */; };
 		4953D0931AF4152500BC1AFA /* textFieldFocused.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08D1AF4152500BC1AFA /* textFieldFocused.png */; };
 		4953D0941AF4152500BC1AFA /* textFieldUnfocused.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08E1AF4152500BC1AFA /* textFieldUnfocused.png */; };
-		4953D0951AF4152500BC1AFA /* valid_circuit3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D08F1AF4152500BC1AFA /* valid_circuit3.png */; };
-		4953D0991AF4173800BC1AFA /* icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D0961AF4173800BC1AFA /* icon_1.png */; };
-		4953D09A1AF4173800BC1AFA /* icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D0971AF4173800BC1AFA /* icon_2.png */; };
-		4953D09B1AF4173800BC1AFA /* icon_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D0981AF4173800BC1AFA /* icon_3.png */; };
 		4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09C1AF41F8500BC1AFA /* icon_1-1.png */; };
 		4953D0A01AF41F8500BC1AFA /* icon_2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09D1AF41F8500BC1AFA /* icon_2-1.png */; };
 		4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09E1AF41F8500BC1AFA /* icon_3-1.png */; };
 		49804CF91AFE1A6A003B7CB0 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */; };
 		49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */; };
+		49804CFE1AFE58B4003B7CB0 /* ContainersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49804CFC1AFE58B4003B7CB0 /* ContainersListViewController.m */; };
+		49804CFF1AFE58B4003B7CB0 /* ContainersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49804CFD1AFE58B4003B7CB0 /* ContainersListViewController.xib */; };
 		4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4984611A1AF8F10B00AB7AE9 /* WebService.m */; };
 		4991AA021AAE5D7D0093C54E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA011AAE5D7D0093C54E /* main.m */; };
 		4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4991AA0C1AAE5D7D0093C54E /* Images.xcassets */; };
@@ -91,20 +87,17 @@
 		494C77BD1AB18BBE00194A63 /* Steed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Steed.h; path = Classes/Steed.h; sourceTree = "<group>"; };
 		494C77BE1AB18BBE00194A63 /* Steed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Steed.m; path = Classes/Steed.m; sourceTree = "<group>"; };
 		4953D08A1AF4152500BC1AFA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
-		4953D08B1AF4152500BC1AFA /* map search 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map search 2.png"; path = "Images/map search 2.png"; sourceTree = "<group>"; };
-		4953D08C1AF4152500BC1AFA /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile2.png; path = Images/profile2.png; sourceTree = "<group>"; };
 		4953D08D1AF4152500BC1AFA /* textFieldFocused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldFocused.png; path = Images/textFieldFocused.png; sourceTree = "<group>"; };
 		4953D08E1AF4152500BC1AFA /* textFieldUnfocused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldUnfocused.png; path = Images/textFieldUnfocused.png; sourceTree = "<group>"; };
-		4953D08F1AF4152500BC1AFA /* valid_circuit3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = valid_circuit3.png; path = Images/valid_circuit3.png; sourceTree = "<group>"; };
-		4953D0961AF4173800BC1AFA /* icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_1.png; path = Images/icon_1.png; sourceTree = "<group>"; };
-		4953D0971AF4173800BC1AFA /* icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_2.png; path = Images/icon_2.png; sourceTree = "<group>"; };
-		4953D0981AF4173800BC1AFA /* icon_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_3.png; path = Images/icon_3.png; sourceTree = "<group>"; };
 		4953D09C1AF41F8500BC1AFA /* icon_1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_1-1.png"; path = "Images/icon_1-1.png"; sourceTree = "<group>"; };
 		4953D09D1AF41F8500BC1AFA /* icon_2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_2-1.png"; path = "Images/icon_2-1.png"; sourceTree = "<group>"; };
 		4953D09E1AF41F8500BC1AFA /* icon_3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_3-1.png"; path = "Images/icon_3-1.png"; sourceTree = "<group>"; };
 		49804CF61AFE1A6A003B7CB0 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = Views/DetailsViewController.h; sourceTree = "<group>"; };
 		49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = Views/DetailsViewController.m; sourceTree = "<group>"; };
 		49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsViewController.xib; path = Views/DetailsViewController.xib; sourceTree = "<group>"; };
+		49804CFB1AFE58B4003B7CB0 /* ContainersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainersListViewController.h; path = Views/ContainersListViewController.h; sourceTree = "<group>"; };
+		49804CFC1AFE58B4003B7CB0 /* ContainersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainersListViewController.m; path = Views/ContainersListViewController.m; sourceTree = "<group>"; };
+		49804CFD1AFE58B4003B7CB0 /* ContainersListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContainersListViewController.xib; path = Views/ContainersListViewController.xib; sourceTree = "<group>"; };
 		498461191AF8F10B00AB7AE9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebService.h; path = WebServices/WebService.h; sourceTree = "<group>"; };
 		4984611A1AF8F10B00AB7AE9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebService.m; path = WebServices/WebService.m; sourceTree = "<group>"; };
 		4991A9FC1AAE5D7D0093C54E /* Inovea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inovea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +162,9 @@
 				49804CF61AFE1A6A003B7CB0 /* DetailsViewController.h */,
 				49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */,
 				49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */,
+				49804CFB1AFE58B4003B7CB0 /* ContainersListViewController.h */,
+				49804CFC1AFE58B4003B7CB0 /* ContainersListViewController.m */,
+				49804CFD1AFE58B4003B7CB0 /* ContainersListViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,15 +203,9 @@
 				4953D09C1AF41F8500BC1AFA /* icon_1-1.png */,
 				4953D09D1AF41F8500BC1AFA /* icon_2-1.png */,
 				4953D09E1AF41F8500BC1AFA /* icon_3-1.png */,
-				4953D0961AF4173800BC1AFA /* icon_1.png */,
-				4953D0971AF4173800BC1AFA /* icon_2.png */,
-				4953D0981AF4173800BC1AFA /* icon_3.png */,
 				4953D08A1AF4152500BC1AFA /* logo.png */,
-				4953D08B1AF4152500BC1AFA /* map search 2.png */,
-				4953D08C1AF4152500BC1AFA /* profile2.png */,
 				4953D08D1AF4152500BC1AFA /* textFieldFocused.png */,
 				4953D08E1AF4152500BC1AFA /* textFieldUnfocused.png */,
-				4953D08F1AF4152500BC1AFA /* valid_circuit3.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -362,19 +352,14 @@
 				492A80191AF3FC940078F481 /* TrajetsAttenteViewController.xib in Resources */,
 				4953D0941AF4152500BC1AFA /* textFieldUnfocused.png in Resources */,
 				4953D0901AF4152500BC1AFA /* logo.png in Resources */,
-				4953D09B1AF4173800BC1AFA /* icon_3.png in Resources */,
+				49804CFF1AFE58B4003B7CB0 /* ContainersListViewController.xib in Resources */,
 				49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */,
-				4953D0991AF4173800BC1AFA /* icon_1.png in Resources */,
-				4953D0911AF4152500BC1AFA /* map search 2.png in Resources */,
 				49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */,
-				4953D0921AF4152500BC1AFA /* profile2.png in Resources */,
-				4953D09A1AF4173800BC1AFA /* icon_2.png in Resources */,
 				4953D0931AF4152500BC1AFA /* textFieldFocused.png in Resources */,
 				4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */,
 				492A80121AF3FC940078F481 /* LostPasswordViewController.xib in Resources */,
 				492A80171AF3FC940078F481 /* ParametersViewController.xib in Resources */,
 				4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */,
-				4953D0951AF4152500BC1AFA /* valid_circuit3.png in Resources */,
 				4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */,
 				4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */,
 				4953D0A01AF41F8500BC1AFA /* icon_2-1.png in Resources */,
@@ -413,6 +398,7 @@
 				492A800D1AF3FC940078F481 /* AppDelegate.m in Sources */,
 				4984611B1AF8F10B00AB7AE9 /* WebService.m in Sources */,
 				492A80141AF3FC940078F481 /* MenuViewController.m in Sources */,
+				49804CFE1AFE58B4003B7CB0 /* ContainersListViewController.m in Sources */,
 				492A800E1AF3FC940078F481 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

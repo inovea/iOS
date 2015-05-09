@@ -1,5 +1,5 @@
 //
-//  DetailsViewController.h
+//  ContainersListViewController.h
 //  Inovea
 //
 //  Created by Sébastien LOUIS on 09/05/2015.
@@ -9,15 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Errand.h"
 
-@interface DetailsViewController : UIViewController
+@interface ContainersListViewController : UIViewController
 {
-    @private
+@private
     Errand* errand_;
 }
-
-@property (weak, nonatomic) IBOutlet UIImageView *previewImage;
 @property (nonatomic, strong) Errand* errand;
+
 @property (weak, nonatomic) IBOutlet UILabel *idErrandLbl;
-@property (weak, nonatomic) IBOutlet UILabel *distanceErrandLbl;
-@property (weak, nonatomic) IBOutlet UILabel *dureeErrandLbl;
+
 @end

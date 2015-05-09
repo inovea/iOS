@@ -58,6 +58,10 @@
         menuViewController.steed = steed;
         [self.navigationController pushViewController:menuViewController animated:YES];
     }
+    else
+    {
+        self.errorLoginLbl.text = @"Adresse mail/mot de passe incorrecte";
+    }
   
 }
 

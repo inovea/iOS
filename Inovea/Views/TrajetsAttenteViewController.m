@@ -10,6 +10,7 @@
 #import "Errand.h"
 #import "Container.h"
 #import "WSErrand.h"
+#import "DetailsViewController.h"
 
 @interface TrajetsAttenteViewController ()
 
@@ -181,6 +182,20 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"%lu -- %@", indexPath.row, cell.textLabel.text);
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if(tableView == self.todayTableView)
+    {
+        Errand* selectedErrand = [self.todayErrands objectAtIndex:indexPath.row];
+        DetailsViewController* detailsViewController = [DetailsViewController new];
+        
+        detailsViewController.errand = selectedErrand;
+        [self.navigationController pushViewController:detailsViewController animated:NO];
+    }
+    
 }
 
 /*
