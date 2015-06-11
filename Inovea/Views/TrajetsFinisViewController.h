@@ -22,8 +22,9 @@ Steed* steed_;
 @property (nonatomic, strong) Steed* steed;
 
 
-
-
 @property (weak, nonatomic) IBOutlet UITableView *finishErrandsTableView;
+
+@property (weak, nonatomic) IBOutlet UILabel *noErrandsLbl;
+
 
 @end

@@ -21,9 +21,9 @@
     Steed* steed_;
 }
 @property (weak, nonatomic) IBOutlet UITableView *todayTableView;
-@property (weak, nonatomic) IBOutlet UITableView *othersTableView;
 @property (weak, nonatomic) IBOutlet UILabel *noTodayErrandsLbl;
 @property (weak, nonatomic) IBOutlet UILabel *noFuturErrandsLbl;
+@property (weak, nonatomic) IBOutlet UITableView *othersTableView;
 
 @property (nonatomic, strong) IBOutlet NSMutableArray* tabErrands;
 @property (nonatomic, strong) NSMutableArray* todayErrands;

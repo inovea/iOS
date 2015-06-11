@@ -38,6 +38,9 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
             [self.tabFinishErrands addObject:errand];
         }
     }
+    
+    if([self.tabFinishErrands count] == 0)
+        self.noErrandsLbl.hidden = false;
 
 
 }

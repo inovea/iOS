@@ -58,8 +58,21 @@
     });
 }
 - (IBAction)onClickItinerary:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"http://maps.google.com/?q=New+York"];
-    [[UIApplication sharedApplication] openURL:url];
+    // NSURL *url = [NSURL URLWithString:@"http://maps.google.com/?q=New+York"];
+    //[[UIApplication sharedApplication] openURL:url];
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]]) {
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:@"comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic"]];
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Google Maps"
+                                                        message:@"Vous devez installer l'application Google Maps pour lancer l'itinéraire"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Annuler"
+                                              otherButtonTitles:@"Télécharger", nil];
+        [alert show];
+    }
 }
 
 - (IBAction)onClickFinish:(id)sender {
@@ -106,7 +119,7 @@
 
 - (void)goBack
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Termnier la course"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Terminer la course"
                                                     message:@"Souhaitez-vous vraiment terminer cette course ?"
                                                    delegate:self
                                           cancelButtonTitle:@"Non"
@@ -116,12 +129,23 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    
+    
     switch(buttonIndex) {
         case 1:
-            [WSErrand finishErrand:[self errand]];
-            [self.navigationController popViewControllerAnimated:false];
+            if([[alertView buttonTitleAtIndex:1] isEqualToString:@"Télécharger"]){
+                [[UIApplication sharedApplication] openURL:
+                 [NSURL URLWithString:@"https://itunes.apple.com/us/app/google-maps/id585027354?mt=8"]];
+            }
+            else{
+                [WSErrand finishErrand:[self errand]];
+                [self.navigationController popViewControllerAnimated:false];
+            }
+            
             break;
+            
     }
+    
 }
 
 @end
