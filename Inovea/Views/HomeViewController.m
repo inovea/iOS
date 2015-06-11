@@ -11,6 +11,7 @@
 #import "LostPasswordViewController.h"
 #import "Steed.h"
 #import "Connexion.h"
+#import "MBProgressHUD.h"
 
 @interface HomeViewController ()
 
@@ -48,6 +49,10 @@
 }
 - (IBAction)onClickConnexion:(id)sender {
     
+    MBProgressHUD *hud =[MBProgressHUD showHUDAddedTo:self.view animated:YES];  
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Chargement";
+    
     Steed* steed = [Steed new];
     steed = [Connexion loginWithMail:self.tbMail.text andPassword:self.tbPassword.text];
     
@@ -56,12 +61,13 @@
     {
         MenuViewController* menuViewController = [MenuViewController new];
         menuViewController.steed = steed;
-        [self.navigationController pushViewController:menuViewController animated:YES];
+        [self.navigationController pushViewController:menuViewController animated:NO];
     }
     else
     {
         self.errorLoginLbl.text = @"Adresse mail/mot de passe incorrecte";
     }
+   [hud hide:YES];
   
 }
 

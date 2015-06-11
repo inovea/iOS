@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490EDFCE1B08CCFB0095A7FB /* finish_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCB1B08CCFB0095A7FB /* finish_course.png */; };
+		490EDFCF1B08CCFB0095A7FB /* itinerary.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCC1B08CCFB0095A7FB /* itinerary.png */; };
+		490EDFD01B08CCFB0095A7FB /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCD1B08CCFB0095A7FB /* list.png */; };
 		4925A92F1AB07F9F00E98D66 /* Errand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4925A92E1AB07F9F00E98D66 /* Errand.m */; };
 		492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A1D7A1AAF9B420038CF18 /* Alert.m */; };
 		492A800D1AF3FC940078F481 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A7FF81AF3FC940078F481 /* AppDelegate.m */; };
@@ -42,6 +45,8 @@
 		4991AA1C1AAE5D7D0093C54E /* InoveaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991AA1B1AAE5D7D0093C54E /* InoveaTests.m */; };
 		49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */; };
 		49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */; };
+		49CD56E41B18AE4000936C7D /* WSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD56E31B18AE4000936C7D /* WSContainer.m */; };
+		49CD56E81B19F25600936C7D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD56E71B19F25600936C7D /* MBProgressHUD.m */; };
 		49F57B2A1AF9257C00228AAC /* WSErrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F57B291AF9257C00228AAC /* WSErrand.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490EDFCB1B08CCFB0095A7FB /* finish_course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = finish_course.png; path = Images/finish_course.png; sourceTree = "<group>"; };
+		490EDFCC1B08CCFB0095A7FB /* itinerary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = itinerary.png; path = Images/itinerary.png; sourceTree = "<group>"; };
+		490EDFCD1B08CCFB0095A7FB /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = Images/list.png; sourceTree = "<group>"; };
 		4925A92D1AB07F9F00E98D66 /* Errand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Errand.h; path = Classes/Errand.h; sourceTree = "<group>"; };
 		4925A92E1AB07F9F00E98D66 /* Errand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Errand.m; path = Classes/Errand.m; sourceTree = "<group>"; };
 		492A1D791AAF9B420038CF18 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = Classes/Alert.h; sourceTree = "<group>"; };
@@ -111,6 +119,10 @@
 		49A583B51AF64387001E8C72 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = Views/ChangePasswordViewController.h; sourceTree = "<group>"; };
 		49A583B61AF64387001E8C72 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePasswordViewController.m; path = Views/ChangePasswordViewController.m; sourceTree = "<group>"; };
 		49A583B71AF64387001E8C72 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChangePasswordViewController.xib; path = Views/ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		49CD56E21B18AE4000936C7D /* WSContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSContainer.h; path = WebServices/WSContainer.h; sourceTree = "<group>"; };
+		49CD56E31B18AE4000936C7D /* WSContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSContainer.m; path = WebServices/WSContainer.m; sourceTree = "<group>"; };
+		49CD56E61B19F25600936C7D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		49CD56E71B19F25600936C7D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		49F57B281AF9257C00228AAC /* WSErrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSErrand.h; path = WebServices/WSErrand.h; sourceTree = "<group>"; };
 		49F57B291AF9257C00228AAC /* WSErrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSErrand.m; path = WebServices/WSErrand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +190,8 @@
 				49F57B291AF9257C00228AAC /* WSErrand.m */,
 				498461191AF8F10B00AB7AE9 /* WebService.h */,
 				4984611A1AF8F10B00AB7AE9 /* WebService.m */,
+				49CD56E21B18AE4000936C7D /* WSContainer.h */,
+				49CD56E31B18AE4000936C7D /* WSContainer.m */,
 			);
 			name = WebServices;
 			sourceTree = "<group>";
@@ -206,6 +220,9 @@
 				4953D08A1AF4152500BC1AFA /* logo.png */,
 				4953D08D1AF4152500BC1AFA /* textFieldFocused.png */,
 				4953D08E1AF4152500BC1AFA /* textFieldUnfocused.png */,
+				490EDFCB1B08CCFB0095A7FB /* finish_course.png */,
+				490EDFCC1B08CCFB0095A7FB /* itinerary.png */,
+				490EDFCD1B08CCFB0095A7FB /* list.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 		4991A9FE1AAE5D7D0093C54E /* Inovea */ = {
 			isa = PBXGroup;
 			children = (
+				49CD56E51B19F23C00936C7D /* Utils */,
 				4953D0891AF414FC00BC1AFA /* Images */,
 				492A802D1AF3FD560078F481 /* WebServices */,
 				492A7FF61AF3FC820078F481 /* Views */,
@@ -266,6 +284,15 @@
 				4991AA1A1AAE5D7D0093C54E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49CD56E51B19F23C00936C7D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49CD56E61B19F25600936C7D /* MBProgressHUD.h */,
+				49CD56E71B19F25600936C7D /* MBProgressHUD.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +386,9 @@
 				4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */,
 				492A80121AF3FC940078F481 /* LostPasswordViewController.xib in Resources */,
 				492A80171AF3FC940078F481 /* ParametersViewController.xib in Resources */,
+				490EDFD01B08CCFB0095A7FB /* list.png in Resources */,
+				490EDFCE1B08CCFB0095A7FB /* finish_course.png in Resources */,
+				490EDFCF1B08CCFB0095A7FB /* itinerary.png in Resources */,
 				4991AA101AAE5D7D0093C54E /* LaunchScreen.xib in Resources */,
 				4991AA0D1AAE5D7D0093C54E /* Images.xcassets in Resources */,
 				4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */,
@@ -384,10 +414,12 @@
 			files = (
 				494099701AAF6B5F006FA051 /* Container.m in Sources */,
 				492A80331AF401F40078F481 /* Connexion.m in Sources */,
+				49CD56E41B18AE4000936C7D /* WSContainer.m in Sources */,
 				4925A92F1AB07F9F00E98D66 /* Errand.m in Sources */,
 				492A801A1AF3FC940078F481 /* TrajetsFinisViewController.m in Sources */,
 				494C77BF1AB18BBE00194A63 /* Steed.m in Sources */,
 				49A583B81AF64387001E8C72 /* ChangePasswordViewController.m in Sources */,
+				49CD56E81B19F25600936C7D /* MBProgressHUD.m in Sources */,
 				492A1D7B1AAF9B420038CF18 /* Alert.m in Sources */,
 				492A80181AF3FC940078F481 /* TrajetsAttenteViewController.m in Sources */,
 				4991AA021AAE5D7D0093C54E /* main.m in Sources */,

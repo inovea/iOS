@@ -30,7 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)onClickValidate:(id)sender {
-    if(([self.tbActualPassword.text isEqualToString:[self.steed password]]) && ([self.tbNewPassword.text isEqualToString:self.tbConfirmNewPassword.text]) && self.tbNewPassword.text.length > 6 )
+    if(([self.tbActualPassword.text isEqualToString:[self.steed password]]) && ([self.tbNewPassword.text isEqualToString:self.tbConfirmNewPassword.text]))
     {
         NSLog(@"Changement réussi !");
     }

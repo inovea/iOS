@@ -17,14 +17,18 @@
 @synthesize dateFin = dateFin_;
 @synthesize duree = duree_;
 @synthesize distance = distance_;
+@synthesize iddCourier = iddCourier_;
 
--(Errand*)initErrandWithId:(int)idd andState:(int)state andDateDebut:(NSDate*)dateDebut andDistance:(double)distance andDuree:(double)duree{
+-(Errand*)initErrandWithId:(int)idd andState:(int)state andDateDebut:(NSDate*)dateDebut andDateFin:(NSDate*)dateFin andDistance:(double)distance andDuree:(double)duree andIddCourier:(int)iddCourier{
 self = [super init];
 self.idd = idd;
 self.state = state;
 self.dateDebut = dateDebut;
+if(dateFin != nil)
+    self.dateFin = dateFin;
 self.duree = duree;
 self.distance = distance;
+self.iddCourier = iddCourier;
     
 return self;
 }

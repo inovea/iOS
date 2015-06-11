@@ -11,21 +11,26 @@
 @implementation Container
 
 @synthesize idd = idd_;
+@synthesize name = name_;
 @synthesize lat = lat_;
 @synthesize lng = lng_;
-@synthesize address = address_;
 @synthesize state = state_;
-@synthesize alerts = alerts_;
+@synthesize address = address_;
+@synthesize lastCollect = lastCollect_;
+@synthesize idErrand = idErrand_;
 
 
--(id)initContainerWithId :(long)idd andLat:(NSString*)lat andLng: (NSString*)lng andAddress: (NSString*)address andState: (Boolean)state andAlerts:(NSArray*)alerts{
+
+-(id)initContainerWithId :(int)idd andName:(NSString*)name andLat:(double)lat andLng: (double)lng andState: (int)state andLastCollect:(NSDate*)lastCollect andAddress: (NSString*)address andIdErrand:(int)idErrand{
     self = [super init];
     self.idd = idd;
+    self.name = name;
     self.lat = lat;
     self.lng = lng;
     self.address = address;
     self.state = state;
-    self.alerts = alerts;
+    self.lastCollect = lastCollect;
+    self.idErrand = idErrand;
     return self;
 }
 //

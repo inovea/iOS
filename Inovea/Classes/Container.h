@@ -11,22 +11,27 @@
 @interface Container : NSObject
 {
 @private
-    long idd_;
-    NSString* lat_;
-    NSString* lng_;
+    int idd_;
+    NSString* name_;
+    double lat_;
+    double lng_;
     NSString* address_;
-    Boolean state_;
-    NSArray* alerts_;
+    int state_;
+    NSDate* lastCollect_;
+    int idErrand_;
 }
 
-@property (nonatomic,assign)long idd;
-@property (nonatomic, strong) NSString* lat;
-@property (nonatomic, strong) NSString* lng;
+@property (nonatomic,assign)int idd;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic,assign)double lat;
+@property (nonatomic,assign)double lng;
 @property (nonatomic, strong) NSString* address;
-@property (nonatomic,assign)Boolean state;
-@property (nonatomic, strong) NSArray* alerts;
+@property (nonatomic,assign)int state;
+@property (nonatomic, strong) NSDate* lastCollect;
+@property (nonatomic,assign)int idErrand;
 
--(id)initContainerWithId :(long)idd andLat:(NSString*)lat andLng: (NSString*)lng andAddress: (NSString*)address andState: (Boolean)state andAlerts:(NSArray*)alerts;
+-(id)initContainerWithId :(int)idd andName:(NSString*)name andLat:(double)lat andLng: (double)lng andState: (int)state andLastCollect:(NSDate*)lastCollect andAddress: (NSString*)address andIdErrand:(int)idErrand;
+
 //
 //-(long) getId;
 //-(void) setIdd:(long)idd;

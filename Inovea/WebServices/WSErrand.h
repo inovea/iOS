@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Errand.h"
 
 @interface WSErrand : NSObject
 
-+(NSMutableArray*) getErrandsWithId:(int) idd;
++(NSMutableArray*) getErrandsWithCourierId:(int) idd;
++(Errand*) getErrandWithId:(int) idd;
++(Boolean) finishErrand:(Errand*) errand;
 @end

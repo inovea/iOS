@@ -22,10 +22,15 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *todayTableView;
 @property (weak, nonatomic) IBOutlet UITableView *othersTableView;
+@property (weak, nonatomic) IBOutlet UILabel *noTodayErrandsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *noFuturErrandsLbl;
+
 @property (nonatomic, strong) IBOutlet NSMutableArray* tabErrands;
 @property (nonatomic, strong) NSMutableArray* todayErrands;
 @property (nonatomic, strong) NSMutableArray* otherErrands;
 @property (nonatomic, strong) NSDateFormatter* dateFormatter;
 @property (nonatomic, strong) Steed* steed;
+
+-(NSMutableArray*) sortErrandsByAscendingTime:(NSMutableArray*)array;
 @end
     

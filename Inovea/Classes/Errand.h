@@ -18,6 +18,7 @@ NSDate* dateFin_;
 double duree_;
 double distance_;
 NSMutableDictionary* containers_;
+int iddCourier_;
 }
 
 @property(nonatomic, assign)int idd;
@@ -27,10 +28,11 @@ NSMutableDictionary* containers_;
 @property(nonatomic, strong)NSDate* dateDebut;
 @property(nonatomic, strong)NSDate* dateFin;
 @property(nonatomic, strong)NSMutableDictionary* containers;
+@property(nonatomic, assign)int iddCourier;
 
 
 
--(Errand*)initErrandWithId:(int)idd andState:(int)state andDateDebut:(NSDate*)dateDebut andDistance:(double)distance andDuree:(double)duree;
+-(Errand*)initErrandWithId:(int)idd andState:(int)state andDateDebut:(NSDate*)dateDebut andDateFin:(NSDate*)dateFin andDistance:(double)distance andDuree:(double)duree andIddCourier:(int)iddCourier;
 
 //
 //-(long) getId;

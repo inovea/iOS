@@ -52,6 +52,7 @@
 - (IBAction)onClickTrajetsFinis:(id)sender {
     
     TrajetsFinisViewController* trajetsFinisViewController = [TrajetsFinisViewController new];
+    trajetsFinisViewController.steed = self.steed;
     [self.navigationController pushViewController:trajetsFinisViewController animated :NO];
 }
 

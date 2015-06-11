@@ -8,6 +8,9 @@
 
 #import "DetailsViewController.h"
 #import "ContainersListViewController.h"
+#import "WSErrand.h"
+#import "WSContainer.h"
+#import "Container.h"
 
 @interface DetailsViewController ()
 
@@ -16,9 +19,12 @@
 @implementation DetailsViewController
 
 @synthesize errand = errand_;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
+    
     
     self.idErrandLbl.text = [NSString stringWithFormat:@"%d",[self.errand idd] ];
     self.distanceErrandLbl.text = [NSString stringWithFormat:@"%2.f km", [self.errand distance]];
@@ -37,11 +43,12 @@
         self.dureeErrandLbl.text = [NSString stringWithFormat:@"%dmin", minutes];
 
     
-    
-    NSString* url = @"https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318";
+    NSString* googleUrl = [self generateGoogleMapUrl];
+    NSLog(@"url ---> %@", googleUrl);
+//    NSString* url = @"&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318";
     
     dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: url]];
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [googleUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -54,6 +61,16 @@
     NSURL *url = [NSURL URLWithString:@"http://maps.google.com/?q=New+York"];
     [[UIApplication sharedApplication] openURL:url];
 }
+
+- (IBAction)onClickFinish:(id)sender {
+    
+        [self goBack];
+//    
+//    [WSErrand finishErrand:[self errand]];
+//    [self.navigationController popViewControllerAnimated:false];
+}
+
+
 - (IBAction)onClickContainersList:(id)sender {
     
     ContainersListViewController* containersListViewController = [ContainersListViewController new];
@@ -67,14 +84,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSString*) generateGoogleMapUrl{
+
+    NSMutableArray* containers = [NSMutableArray new];
+    
+    NSMutableString* url = [NSMutableString new];
+    
+    [url appendString:@"https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&size=600x300&maptype=roadmap"];
+
+    int idd =(int)[self.errand idd];
+    containers = [WSContainer getContainersByErrandId:idd];
+    
+    for(Container* cont in containers){
+        [url appendString:[NSString stringWithFormat:@"&markers=color:green|label:T|%.5lf,%.5lf", [cont lat], [cont lng]]];
+    }
+    
+    return url;
+
 }
-*/
+
+- (void)goBack
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Termnier la course"
+                                                    message:@"Souhaitez-vous vraiment terminer cette course ?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Non"
+                                          otherButtonTitles:@"Oui", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 1:
+            [WSErrand finishErrand:[self errand]];
+            [self.navigationController popViewControllerAnimated:false];
+            break;
+    }
+}
 
 @end

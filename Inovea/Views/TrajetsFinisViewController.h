@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Steed.h"
 
-@interface TrajetsFinisViewController : UIViewController
+@interface TrajetsFinisViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+@private
+NSMutableArray* tabErrands_;
+NSMutableArray* tabFinishErrands_;
+Steed* steed_;
+}
+
+@property (nonatomic, strong) IBOutlet NSMutableArray* tabErrands;
+@property (nonatomic, strong) IBOutlet NSMutableArray* tabFinishErrands;
+@property (nonatomic, strong) Steed* steed;
+
+
+
+
+@property (weak, nonatomic) IBOutlet UITableView *finishErrandsTableView;
 
 @end
