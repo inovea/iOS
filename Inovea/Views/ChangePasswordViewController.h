@@ -14,6 +14,11 @@
 @private
     Steed* steed_;
 }
+@property (weak, nonatomic) IBOutlet UILabel *actualPasswordLbl;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLbl;
+@property (weak, nonatomic) IBOutlet UILabel *confirmPasswordLbl;
+
+
 
 @property (nonatomic, strong) Steed* steed;
 @property (weak, nonatomic) IBOutlet UITextField *tbActualPassword;

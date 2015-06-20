@@ -10,8 +10,10 @@
 
 @interface HomeViewController : UIViewController <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *mailLbl;
 @property (weak, nonatomic) IBOutlet UITextField *tbMail;
-@property (weak, nonatomic) IBOutlet UITextField *tbPassword;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLbl;
 @property (weak, nonatomic) IBOutlet UILabel *errorLoginLbl;
+@property (weak, nonatomic) IBOutlet UITextField *tbPassword;
 
 @end

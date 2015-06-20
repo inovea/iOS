@@ -26,6 +26,13 @@
     self.view.backgroundColor = [UIColor clearColor];
     
     
+    int idd =(int)[self.errand idd];
+    NSMutableArray* array = [NSMutableArray new];
+    array = [WSContainer getContainersByErrandId:idd];
+    self.errand.containers = array;
+    
+    
+    
     self.idErrandLbl.text = [NSString stringWithFormat:@"%d",[self.errand idd] ];
     self.distanceErrandLbl.text = [NSString stringWithFormat:@"%2.f km", [self.errand distance]];
     
@@ -100,16 +107,13 @@
 
 -(NSString*) generateGoogleMapUrl{
 
-    NSMutableArray* containers = [NSMutableArray new];
+
     
     NSMutableString* url = [NSMutableString new];
     
     [url appendString:@"https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&size=600x300&maptype=roadmap"];
-
-    int idd =(int)[self.errand idd];
-    containers = [WSContainer getContainersByErrandId:idd];
     
-    for(Container* cont in containers){
+    for(Container* cont in [self.errand containers]){
         [url appendString:[NSString stringWithFormat:@"&markers=color:green|label:T|%.5lf,%.5lf", [cont lat], [cont lng]]];
     }
     

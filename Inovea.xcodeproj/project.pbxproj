@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490BE8C51B349AF200063797 /* launch_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 490BE8C41B349AF200063797 /* launch_icon.png */; };
 		490EDFCE1B08CCFB0095A7FB /* finish_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCB1B08CCFB0095A7FB /* finish_course.png */; };
 		490EDFCF1B08CCFB0095A7FB /* itinerary.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCC1B08CCFB0095A7FB /* itinerary.png */; };
 		490EDFD01B08CCFB0095A7FB /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 490EDFCD1B08CCFB0095A7FB /* list.png */; };
@@ -34,6 +35,7 @@
 		4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09C1AF41F8500BC1AFA /* icon_1-1.png */; };
 		4953D0A01AF41F8500BC1AFA /* icon_2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09D1AF41F8500BC1AFA /* icon_2-1.png */; };
 		4953D0A11AF41F8500BC1AFA /* icon_3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4953D09E1AF41F8500BC1AFA /* icon_3-1.png */; };
+		496D21691B357C4200DB6487 /* valid-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 496D21681B357C4200DB6487 /* valid-icon.png */; };
 		49804CF91AFE1A6A003B7CB0 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */; };
 		49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */; };
 		49804CFE1AFE58B4003B7CB0 /* ContainersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49804CFC1AFE58B4003B7CB0 /* ContainersListViewController.m */; };
@@ -61,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490BE8C41B349AF200063797 /* launch_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch_icon.png; path = Images/launch_icon.png; sourceTree = "<group>"; };
 		490EDFCB1B08CCFB0095A7FB /* finish_course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = finish_course.png; path = Images/finish_course.png; sourceTree = "<group>"; };
 		490EDFCC1B08CCFB0095A7FB /* itinerary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = itinerary.png; path = Images/itinerary.png; sourceTree = "<group>"; };
 		490EDFCD1B08CCFB0095A7FB /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = Images/list.png; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		4953D09C1AF41F8500BC1AFA /* icon_1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_1-1.png"; path = "Images/icon_1-1.png"; sourceTree = "<group>"; };
 		4953D09D1AF41F8500BC1AFA /* icon_2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_2-1.png"; path = "Images/icon_2-1.png"; sourceTree = "<group>"; };
 		4953D09E1AF41F8500BC1AFA /* icon_3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_3-1.png"; path = "Images/icon_3-1.png"; sourceTree = "<group>"; };
+		496D21681B357C4200DB6487 /* valid-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "valid-icon.png"; path = "Images/valid-icon.png"; sourceTree = "<group>"; };
 		49804CF61AFE1A6A003B7CB0 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = Views/DetailsViewController.h; sourceTree = "<group>"; };
 		49804CF71AFE1A6A003B7CB0 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = Views/DetailsViewController.m; sourceTree = "<group>"; };
 		49804CF81AFE1A6A003B7CB0 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsViewController.xib; path = Views/DetailsViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		4953D0891AF414FC00BC1AFA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				496D21681B357C4200DB6487 /* valid-icon.png */,
+				490BE8C41B349AF200063797 /* launch_icon.png */,
 				4953D09C1AF41F8500BC1AFA /* icon_1-1.png */,
 				4953D09D1AF41F8500BC1AFA /* icon_2-1.png */,
 				4953D09E1AF41F8500BC1AFA /* icon_3-1.png */,
@@ -344,6 +350,7 @@
 				TargetAttributes = {
 					4991A9FB1AAE5D7D0093C54E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = U6DZJE9H74;
 					};
 					4991AA141AAE5D7D0093C54E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -378,11 +385,13 @@
 				492A801B1AF3FC940078F481 /* TrajetsFinisViewController.xib in Resources */,
 				492A80191AF3FC940078F481 /* TrajetsAttenteViewController.xib in Resources */,
 				4953D0941AF4152500BC1AFA /* textFieldUnfocused.png in Resources */,
+				490BE8C51B349AF200063797 /* launch_icon.png in Resources */,
 				4953D0901AF4152500BC1AFA /* logo.png in Resources */,
 				49804CFF1AFE58B4003B7CB0 /* ContainersListViewController.xib in Resources */,
 				49804CFA1AFE1A6A003B7CB0 /* DetailsViewController.xib in Resources */,
 				49A583B91AF64387001E8C72 /* ChangePasswordViewController.xib in Resources */,
 				4953D0931AF4152500BC1AFA /* textFieldFocused.png in Resources */,
+				496D21691B357C4200DB6487 /* valid-icon.png in Resources */,
 				4953D09F1AF41F8500BC1AFA /* icon_1-1.png in Resources */,
 				492A80121AF3FC940078F481 /* LostPasswordViewController.xib in Resources */,
 				492A80171AF3FC940078F481 /* ParametersViewController.xib in Resources */,
@@ -547,9 +556,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Inovea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -557,9 +571,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Inovea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -21,9 +21,22 @@
     
     
     [self.tbActualPassword setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbActualPassword addTarget:self
+                              action:@selector(textFieldDidChange:)
+                    forControlEvents:UIControlEventEditingChanged];
+    
     [self.tbNewPassword setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbNewPassword addTarget:self
+                              action:@selector(textFieldDidChange:)
+                    forControlEvents:UIControlEventEditingChanged];
+    
     [self.tbConfirmNewPassword setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-
+    [self.tbConfirmNewPassword addTarget:self
+                              action:@selector(textFieldDidChange:)
+                    forControlEvents:UIControlEventEditingChanged];
+    
+   
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,6 +49,33 @@
     }
     else
         NSLog(@"Error : steed -> %@, actual -> %@, new -> %@, confirm -> %@", [self.steed password], self.tbActualPassword.text, self.tbNewPassword.text, self.tbNewPassword.text );
+}
+
+-(void)textFieldDidChange :(UITextField *)theTextField{
+    
+    Boolean val;
+    
+    if([theTextField.text isEqualToString:@""])
+       val = true;
+    else
+        val = false;
+    
+    if([theTextField isEqual:self.tbActualPassword]){
+        NSLog(@"actual password");
+              self.actualPasswordLbl.hidden = val;
+    }
+        
+    else if([theTextField isEqual:self.tbNewPassword]){
+         NSLog(@"new password");
+         self.passwordLbl.hidden = val;
+    }
+    
+    else if([theTextField isEqual:self.tbConfirmNewPassword]){
+        NSLog(@"confirm password");
+        self.confirmPasswordLbl.hidden = val;
+
+    }
+    
 }
 
 /*

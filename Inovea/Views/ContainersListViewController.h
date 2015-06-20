@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Errand.h"
 
-@interface ContainersListViewController : UIViewController
+@interface ContainersListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
 @private
     Errand* errand_;
 }
 @property (nonatomic, strong) Errand* errand;
 
+@property (weak, nonatomic) IBOutlet UITableView *containersTableView;
 @property (weak, nonatomic) IBOutlet UILabel *idErrandLbl;
 
 @end

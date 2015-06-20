@@ -7,10 +7,13 @@
 //
 
 #import "ContainersListViewController.h"
+#import "Container.h"
 
 @interface ContainersListViewController ()
 
 @end
+
+static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
 
 @implementation ContainersListViewController
 
@@ -19,13 +22,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
-    
-    self.idErrandLbl.text = [NSString stringWithFormat:@"%d",[self.errand idd]];
+    self.containersTableView.delegate = self;
+    self.containersTableView.dataSource = self;
+    self.idErrandLbl.text = [NSString stringWithFormat:@" %d",[self.errand idd]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[self.errand containers] count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)
+tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSMutableArray* containersList = [self.errand containers];
+    Container* container  = [Container new];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kHomeViewControllerCellIdentifier];
+    
+    
+  
+    container = [containersList objectAtIndex:indexPath.row];
+    
+    
+    if(cell==nil){
+        cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kHomeViewControllerCellIdentifier];
+        
+        
+        UILabel* containerLbl = [[UILabel alloc]initWithFrame:CGRectMake(20, 22, 140, 20)];
+        containerLbl.text = [NSString stringWithFormat:@"Conteneur n°%d", [container idd]];
+        containerLbl.textColor = [UIColor colorWithRed:255/255. green:255/255. blue:255/255. alpha:1];
+        [cell.contentView addSubview:containerLbl];
+        
+        cell.backgroundColor = [UIColor clearColor];
+        
+    }
+    
+    return cell;
 }
 
 /*

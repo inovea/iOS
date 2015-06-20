@@ -72,7 +72,7 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         
         UILabel* errandLbl = [[UILabel alloc]initWithFrame:CGRectMake(20, 22, 140, 20)];
         errandLbl.text = [NSString stringWithFormat:@"%@  Trajet n°%d", errandDate, [errand idd]];
-        
+        errandLbl.textColor = [UIColor colorWithRed:255/255. green:255/255. blue:255/255. alpha:1];
         [cell.contentView addSubview:errandLbl];
         
         cell.backgroundColor = [UIColor clearColor];

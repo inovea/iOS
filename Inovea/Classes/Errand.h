@@ -17,7 +17,7 @@ NSDate* dateDebut_;
 NSDate* dateFin_;
 double duree_;
 double distance_;
-NSMutableDictionary* containers_;
+NSMutableArray* containers_;
 int iddCourier_;
 }
 
@@ -27,7 +27,7 @@ int iddCourier_;
 @property(nonatomic, assign)double distance;
 @property(nonatomic, strong)NSDate* dateDebut;
 @property(nonatomic, strong)NSDate* dateFin;
-@property(nonatomic, strong)NSMutableDictionary* containers;
+@property(nonatomic, strong)NSMutableArray* containers;
 @property(nonatomic, assign)int iddCourier;
 
 

@@ -25,7 +25,13 @@
     self.tbMail.delegate = self;
     
     [self.tbMail setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbMail addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    
     [self.tbPassword setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.tbPassword addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    
     [super viewDidLoad];
     
     
@@ -59,9 +65,11 @@
     
     if(steed != nil)
     {
+        self.tbPassword.text = @"";
         MenuViewController* menuViewController = [MenuViewController new];
         menuViewController.steed = steed;
         [self.navigationController pushViewController:menuViewController animated:NO];
+       
     }
     else
     {
@@ -75,6 +83,33 @@
     
     LostPasswordViewController* lostPasswordViewController = [LostPasswordViewController new];
     [self.navigationController pushViewController:lostPasswordViewController animated:YES];
+}
+
+-(void)textFieldDidChange :(UITextField *)theTextField{
+    
+    Boolean val;
+    NSLog(@"okkkkk");
+    
+    if([theTextField.text isEqualToString:@""])
+        val = true;
+    else
+        val = false;
+    
+    if([theTextField isEqual:self.tbMail]){
+        NSLog(@"actual password");
+        self.mailLbl.hidden = val;
+    }
+    
+    else if([theTextField isEqual:self.tbPassword]){
+        NSLog(@"new password");
+        self.passwordLbl.hidden = val;
+    }
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.tbPassword endEditing:YES];
+    [self.tbMail endEditing:YES];
 }
 
 /*
