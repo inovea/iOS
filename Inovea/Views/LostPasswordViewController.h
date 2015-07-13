@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface LostPasswordViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *tbMail;

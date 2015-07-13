@@ -113,7 +113,7 @@
 }
 
 
-+(Boolean) finishErrand:(Errand*) errand{
++(Boolean) updateErrand:(Errand*) errand withState: (int)state{
     
     NSDate* date = [NSDate new];
     
@@ -123,12 +123,15 @@
     NSString* dateFinStr = [dateFormatter stringFromDate:date];
     NSString* dateDebutStr = [dateFormatter stringFromDate:[errand dateDebut]];
     
-    NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/errand.php?tag=update&idErrand=%d&state=%d&dateDebut=%@&dateFin=%@&duree=%lf&distance=%lf&idCourier=%d", [errand idd], 2, dateDebutStr, dateFinStr, [errand duree], [errand distance], [errand iddCourier]];
+    NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/errand.php?tag=update&idErrand=%d&state=%d&dateDebut=%@&dateFin=%@&duree=%lf&distance=%lf&idCourier=%d", [errand idd], state, dateDebutStr, dateFinStr, [errand duree], [errand distance], [errand iddCourier]];
     
     NSLog(@"url : %@", url);
     
     NSMutableDictionary* result = [WebService getResultWithUrl:url];
     
-    return true;
+    if(result!=nil && [[result valueForKey:@"error"] isEqualToString:@"0"])
+        return true;
+    else
+        return false;
 }
 @end

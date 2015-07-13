@@ -16,7 +16,7 @@
     double lat_;
     double lng_;
     NSString* address_;
-    int state_;
+    int contState_;
     NSDate* lastCollect_;
     int idErrand_;
 }
@@ -26,7 +26,7 @@
 @property (nonatomic,assign)double lat;
 @property (nonatomic,assign)double lng;
 @property (nonatomic, strong) NSString* address;
-@property (nonatomic,assign)int state;
+@property (nonatomic,assign)int contState;
 @property (nonatomic, strong) NSDate* lastCollect;
 @property (nonatomic,assign)int idErrand;
 

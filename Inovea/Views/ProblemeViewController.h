@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Container.h"
 
-@interface ProblemeViewController : UIViewController
+@interface ProblemeViewController :  UIViewController
+{
+@private
+    Container* selectedContainer_;
+}
+
+@property (nonatomic, strong)Container* selectedContainer;
+
 
 @end

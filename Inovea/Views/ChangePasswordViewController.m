@@ -7,6 +7,8 @@
 //
 
 #import "ChangePasswordViewController.h"
+#import "Connexion.h"
+#import "WebService.h"
 
 @interface ChangePasswordViewController ()
 
@@ -43,12 +45,48 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)onClickValidate:(id)sender {
-    if(([self.tbActualPassword.text isEqualToString:[self.steed password]]) && ([self.tbNewPassword.text isEqualToString:self.tbConfirmNewPassword.text]))
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    
+    Steed* test = [Connexion loginWithMail: [self.steed mail] andPassword: self.tbActualPassword.text];
+    if(test!=nil && ([self.tbNewPassword.text isEqualToString:self.tbConfirmNewPassword.text]))
     {
-        NSLog(@"Changement réussi !");
+        NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/courier.php?tag=changeWord&mail=%@&word1=%@&word2=%@", self.steed.mail, self.tbActualPassword.text, self.tbNewPassword.text];
+        [WebService getResultWithUrl:url];
+        NSLog(url);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
+                                                        message:@"Nouveau mot de passe enregistré."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Valider"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+
     }
-    else
+    else{
+        if(test==nil)
+           {
+               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur"
+                                                               message:@"Le mot de passe actuel est incorrect."
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
+               [alert show];
+           }
+        else if(!([self.tbNewPassword.text isEqualToString:self.tbConfirmNewPassword.text])){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur"
+                                                            message:@"La confirmation et le nouveau mot de passe ne correspondent pas."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }
         NSLog(@"Error : steed -> %@, actual -> %@, new -> %@, confirm -> %@", [self.steed password], self.tbActualPassword.text, self.tbNewPassword.text, self.tbNewPassword.text );
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 
 -(void)textFieldDidChange :(UITextField *)theTextField{
@@ -78,15 +116,23 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.tbActualPassword endEditing:YES];
+    [self.tbNewPassword endEditing:YES];
+    [self.tbConfirmNewPassword endEditing:YES];
 }
-*/
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 1:
+            if([[alertView buttonTitleAtIndex:1] isEqualToString:@"Valider"]){
+                [self.navigationController popViewControllerAnimated:false];
+            }
+            break;
+    }
+}
 
 
 @end

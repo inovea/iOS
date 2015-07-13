@@ -19,6 +19,7 @@
 @implementation DetailsViewController
 
 @synthesize errand = errand_;
+@synthesize steed = steed_;
 
 
 - (void)viewDidLoad {
@@ -59,35 +60,35 @@
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
+            [self.loadingLabel setHidden:YES];
             self.previewImage.image = [UIImage imageWithData: data];
+            
         });
     });
-}
-- (IBAction)onClickItinerary:(id)sender {
-    // NSURL *url = [NSURL URLWithString:@"http://maps.google.com/?q=New+York"];
-    //[[UIApplication sharedApplication] openURL:url];
-    if ([[UIApplication sharedApplication] canOpenURL:
-         [NSURL URLWithString:@"comgooglemaps://"]]) {
-        [[UIApplication sharedApplication] openURL:
-         [NSURL URLWithString:@"comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic"]];
-    } else {
+    
+    if(self.errand.state == 0){
+        [self.listButton setHidden:YES];
+        [self.listTextButton setHidden:YES];
+        [self.finishButton setHidden:YES];
+        [self.finishTextButton setHidden:YES];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Google Maps"
-                                                        message:@"Vous devez installer l'application Google Maps pour lancer l'itinéraire"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Annuler"
-                                              otherButtonTitles:@"Télécharger", nil];
-        [alert show];
     }
+    else{
+        [self.startButton setHidden:YES];
+        [self.startTextButton setHidden:YES];
+    }
+    
 }
+
 
 - (IBAction)onClickFinish:(id)sender {
     
-        [self goBack];
-//    
-//    [WSErrand finishErrand:[self errand]];
-//    [self.navigationController popViewControllerAnimated:false];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Terminer la course"
+                                                    message:@"Souhaitez-vous vraiment terminer cette course ?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Non"
+                                          otherButtonTitles:@"Oui", nil];
+    [alert show];
 }
 
 
@@ -96,6 +97,7 @@
     ContainersListViewController* containersListViewController = [ContainersListViewController new];
     
     containersListViewController.errand = self.errand;
+    containersListViewController.steed = self.steed;
     [self.navigationController pushViewController:containersListViewController animated:NO];
 }
 
@@ -111,24 +113,111 @@
     
     NSMutableString* url = [NSMutableString new];
     
-    [url appendString:@"https://maps.googleapis.com/maps/api/staticmap?center=Paris&zoom=13&size=600x300&maptype=roadmap"];
+    double optimizedCenterX = 0;
+    double optimizedCenterY = 0;
+    double minX = 1000;
+    double maxX = -1000;
+    double minY = 1000;
+    double maxY = -1000;
+    double Xratio;
+    double Yratio;
+    int Xzoom;
+    int Yzoom;
+    int finalZoom;
+    
+    
+    
+    int zoomMin = 5;
+    int zoomMax = 19;
+    double lngRatio = 5.506738;
+    double latRatio = 0.877494;
+    
+    
+    
+    
+    Container* temp = [Container new];
+    
+    for(int i=0; i<[self.errand.containers count]; i++){
+        temp = [self.errand.containers objectAtIndex:i];
+        optimizedCenterX += [temp lat];
+        optimizedCenterY += [temp lng];
+        
+        if([temp lat] < minX)
+            minX = [temp lat];
+        if([temp lat]> maxX)
+            maxX = [temp lat];
+        
+        
+        if([temp lng] < minY)
+            minY = [temp lng];
+        if([temp lng] > maxY)
+            maxY = [temp lng];
+        
+        
+    }
+
+    
+    optimizedCenterX /= [self.errand.containers count];
+    optimizedCenterY /= [self.errand.containers count];
+    NSLog(@"X : %f & Y : %f", optimizedCenterX, optimizedCenterY);
+    
+    Xratio = maxX - minX;
+    Yratio = maxY - minY;
+    
+    Xzoom = zoomMax-(((Xratio*100/latRatio)*15/100)+(zoomMin+1));
+    Yzoom = zoomMax-(((Yratio*100/lngRatio)*15/100)+(zoomMin+1));
+    
+    if(Xzoom < Yzoom)
+        finalZoom=Xzoom;
+    else
+        finalZoom = Yzoom;
+    
+    
+    NSLog(@"Xzoom : %d  && Yzoom :  %d", Xzoom, Yzoom);
+    
+    
+    
+    [url appendString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/staticmap?center=%f,%f&zoom=%d&size=600x300&maptype=roadmap", optimizedCenterX, optimizedCenterY, finalZoom]];
+    
+    int counter = 1;
     
     for(Container* cont in [self.errand containers]){
-        [url appendString:[NSString stringWithFormat:@"&markers=color:green|label:T|%.5lf,%.5lf", [cont lat], [cont lng]]];
+        [url appendString:[NSString stringWithFormat:@"&markers=color:green|label:%d|%.5lf,%.5lf", counter,[cont lat], [cont lng]]];
+        counter ++;
     }
     
     return url;
 
 }
-
-- (void)goBack
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Terminer la course"
-                                                    message:@"Souhaitez-vous vraiment terminer cette course ?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Non"
-                                          otherButtonTitles:@"Oui", nil];
-    [alert show];
+- (IBAction)startErrand:(id)sender {
+    Boolean result;
+    result = [WSErrand updateErrand:self.errand withState:1];
+    if(result){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
+                                                        message:@"Cette course est désormais démarrée."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self.listButton setHidden:NO];
+        [self.listTextButton setHidden:NO];
+        [self.finishButton setHidden:NO];
+        [self.finishTextButton setHidden:NO];
+        [self.startButton setHidden:YES];
+        [self.startTextButton setHidden:YES];
+        
+    }
+    
+    else{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur"
+                                                        message:@"Impossible de commencer la course. Veuillez vérifier votre connexion internet ou contacter votre ordonnanceur."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -141,9 +230,26 @@
                 [[UIApplication sharedApplication] openURL:
                  [NSURL URLWithString:@"https://itunes.apple.com/us/app/google-maps/id585027354?mt=8"]];
             }
+            else if([[alertView buttonTitleAtIndex:1] isEqualToString:@"Confimer"]){
+                
+            }
+            
             else{
-                [WSErrand finishErrand:[self errand]];
-                [self.navigationController popViewControllerAnimated:false];
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                
+                Boolean result = [WSErrand updateErrand:self.errand withState:2];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                if(result)
+                    [self.navigationController popViewControllerAnimated:false];
+                else{
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur"
+                                                                    message:@"Impossible de terminer la course. Veuillez vérifier votre connexion internet ou contacter votre ordonnanceur."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                    
+                }
             }
             
             break;

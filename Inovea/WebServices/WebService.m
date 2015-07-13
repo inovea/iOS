@@ -12,7 +12,7 @@
 
 +(NSMutableDictionary*) getResultWithUrl:(NSString*)url{
 
-
+    NSLog(@"url %@", url);
 NSURL* URL = [NSURL URLWithString:url];
 NSURLRequest* request = [NSURLRequest requestWithURL:URL];
 NSError* error = nil;
@@ -42,7 +42,6 @@ NSMutableDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:objectDa
     
     else
         return nil;
-    
     
 }
 

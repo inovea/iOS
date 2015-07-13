@@ -29,7 +29,6 @@
     if (result!=nil)
     {
         
-        
         if([[result valueForKey:@"error"] isEqualToString:@"0"])
         {
             for(NSObject* obj in [result objectForKey:@"container"]){
@@ -62,4 +61,38 @@
     return nil;
 
 }
+
++(BOOL)changeContainerStateWithContainer:(Container*)container andState:(int)state{
+    
+    NSString* date = [NSString new];
+    if(state == 0){
+        NSDateFormatter* dateFormatter = [NSDateFormatter new];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm"];
+        NSDate* currentdate = [NSDate date];
+        date = [dateFormatter stringFromDate:currentdate];
+    }
+    
+    else {
+        date = @"0000-00-00T00:00:00";
+    }
+    
+    NSString* code = [container.address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/container.php?tag=update&idContainer=%d&name=%@&lat=%f&lng=%f&state=%d&lastCollect=%@&address=%@&idErrand=%d", container.idd, container.name, container.lat, container.lng, state, date, code, container.idErrand];
+    
+    
+    NSLog(@"--> %@", url);
+    
+     NSMutableDictionary* result = [WebService getResultWithUrl:url];
+    
+    if (result!=nil){
+            return true;
+    }
+    return false;
+
+        
+    
+    
+};
+
 @end

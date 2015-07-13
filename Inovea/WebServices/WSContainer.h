@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Container.h"
 @interface WSContainer : NSObject
 
 +(NSMutableArray*)getContainersByErrandId:(int)idd;
++(BOOL)changeContainerStateWithContainer:(Container*)container andState:(int)state;
 
 @end

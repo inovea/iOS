@@ -19,10 +19,20 @@
 
 @implementation HomeViewController
 
+-(void) viewWillAppear:(BOOL)animated{
+    
+    if(self.tbMail.text.length == 0)
+        [self.mailLbl setHidden:YES];
+    if(self.tbPassword.text.length ==0)
+        [self.passwordLbl setHidden:YES];
+}
+
 - (void)viewDidLoad {
     
     self.tbPassword.delegate = self;
     self.tbMail.delegate = self;
+    
+    
     
     [self.tbMail setValue:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
     [self.tbMail addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
@@ -55,9 +65,7 @@
 }
 - (IBAction)onClickConnexion:(id)sender {
     
-    MBProgressHUD *hud =[MBProgressHUD showHUDAddedTo:self.view animated:YES];  
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Chargement";
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     Steed* steed = [Steed new];
     steed = [Connexion loginWithMail:self.tbMail.text andPassword:self.tbPassword.text];
@@ -75,20 +83,20 @@
     {
         self.errorLoginLbl.text = @"Adresse mail/mot de passe incorrecte";
     }
-   [hud hide:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
   
 }
 
 - (IBAction)onClickLostPassword:(id)sender {
     
     LostPasswordViewController* lostPasswordViewController = [LostPasswordViewController new];
-    [self.navigationController pushViewController:lostPasswordViewController animated:YES];
+    [self.navigationController pushViewController:lostPasswordViewController animated:NO];
 }
 
 -(void)textFieldDidChange :(UITextField *)theTextField{
     
     Boolean val;
-    NSLog(@"okkkkk");
     
     if([theTextField.text isEqualToString:@""])
         val = true;
@@ -112,15 +120,6 @@
     [self.tbMail endEditing:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
 

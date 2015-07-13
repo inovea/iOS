@@ -31,9 +31,8 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
 
 -(void) viewWillAppear:(BOOL)animated{
     
-    MBProgressHUD *hud =[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Chargement";
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     
     self.view.backgroundColor = [UIColor clearColor];
@@ -92,7 +91,9 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
     
         [self.todayTableView reloadData];
     
-    [hud hide:YES];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 
 - (void)viewDidLoad {
@@ -171,7 +172,7 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
    
         
-        UILabel* dateLbl = [[UILabel alloc]initWithFrame:CGRectMake(20, 22, 140, 20)];
+        UILabel* dateLbl = [[UILabel alloc]initWithFrame:CGRectMake(10, 22, 140, 20)];
         dateLbl.text = [NSString stringWithFormat:@"%@", circuitDate];
         
         //Add color for today errands
@@ -236,6 +237,7 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         DetailsViewController* detailsViewController = [DetailsViewController new];
         
         detailsViewController.errand = selectedErrand;
+        detailsViewController.steed = self.steed;
         [self.navigationController pushViewController:detailsViewController animated:NO];
     }
     
@@ -252,9 +254,7 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 */
 
 -(NSMutableArray*) sortErrandsByAscendingTime:(NSMutableArray*)array{
-    
-    
-    NSLog(@"%d ---- :) ", [array count]);
+
     if([array count] > 1)
     {
        

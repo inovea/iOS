@@ -24,6 +24,9 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     self.view.backgroundColor = [UIColor clearColor];
     self.finishErrandsTableView.delegate = self;
     self.finishErrandsTableView.dataSource = self;
@@ -41,6 +44,9 @@ static NSString* const kHomeViewControllerCellIdentifier=@"SuperUniqueKey";
     
     if([self.tabFinishErrands count] == 0)
         self.noErrandsLbl.hidden = false;
+    
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 
 
 }

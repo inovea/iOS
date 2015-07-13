@@ -7,6 +7,7 @@
 //
 
 #import "LostPasswordViewController.h"
+#import "WebService.h"
 
 @interface LostPasswordViewController ()
 
@@ -26,6 +27,37 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)onSendClick:(id)sender {
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+    NSMutableDictionary* result = [WebService getResultWithUrl:[NSString stringWithFormat:@"http://inovea.herobo.com/webhost/courier.php?tag=resetPassword&mail=%@", self.tbMail.text]];
+    
+    
+    if([[result  valueForKey:@"error"] isEqualToString:@"0"]){
+        [self.navigationController popViewControllerAnimated:false];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
+                                                        message:@"Votre nouveau mot de passe a été envoyé à l'adresse mail saisie."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Valider"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erreur"
+                                                        message:@"L'adresse mail saisie ne correspond à aucun compte."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Valider"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+    
 }
 
 /*

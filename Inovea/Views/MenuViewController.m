@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    
     self.view.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view from its nib.
     
@@ -41,6 +44,10 @@
     
     [self.parametresBtn setImage:parametresImg forState:UIControlStateNormal];
     [self.parametresBtn setTitle:@"Paramètres du compte" forState:UIControlStateNormal];
+    
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 - (IBAction)trajetsAttenteAction:(id)sender {
     
@@ -53,7 +60,7 @@
     
     TrajetsFinisViewController* trajetsFinisViewController = [TrajetsFinisViewController new];
     trajetsFinisViewController.steed = self.steed;
-    [self.navigationController pushViewController:trajetsFinisViewController animated :NO];
+    [self.navigationController pushViewController:trajetsFinisViewController animated:NO];
 }
 
 - (IBAction)onClickParameters:(id)sender {

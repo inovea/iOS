@@ -14,7 +14,7 @@
 @synthesize name = name_;
 @synthesize lat = lat_;
 @synthesize lng = lng_;
-@synthesize state = state_;
+@synthesize contState = contState_;
 @synthesize address = address_;
 @synthesize lastCollect = lastCollect_;
 @synthesize idErrand = idErrand_;
@@ -28,7 +28,7 @@
     self.lat = lat;
     self.lng = lng;
     self.address = address;
-    self.state = state;
+    self.contState = state;
     self.lastCollect = lastCollect;
     self.idErrand = idErrand;
     return self;

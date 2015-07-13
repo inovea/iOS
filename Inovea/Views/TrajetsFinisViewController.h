@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Steed.h"
+#import "MBProgressHUD.h"
 
 @interface TrajetsFinisViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {

@@ -13,5 +13,5 @@
 
 +(NSMutableArray*) getErrandsWithCourierId:(int) idd;
 +(Errand*) getErrandWithId:(int) idd;
-+(Boolean) finishErrand:(Errand*) errand;
++(Boolean) updateErrand:(Errand*) errand withState:(int) state;
 @end
