@@ -93,6 +93,15 @@
     NSString* code = [self.commentary.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSString* url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/alert.php?tag=create&state=0&description=%@&author=%d&idContainer=%d", code, [self.steed idd], self.selectedContainer.idd];
+    
+    NSString *url2 = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/container.php?tag=update&idContainer=%d&name=%@&lat=%f&lng=%f&state=2&lastCollect=%@&address=%@&idErrand=%d", self.selectedContainer.idd, self.selectedContainer.name, self.selectedContainer.lat, self.selectedContainer.lng, self.selectedContainer.lastCollect,self.selectedContainer.address, self.selectedContainer.idErrand];
+    url2 = [url2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [WebService getResultWithUrl:url2];
+
+    
+    
+    
     NSLog(@"%@", url);
     
     

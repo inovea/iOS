@@ -12,6 +12,7 @@
 #import "WSContainer.h"
 #import "MBProgressHUD.h"
 #import "WSErrand.h"
+#import "WebService.h"
 
 @interface ContainersListViewController ()
 
@@ -266,6 +267,18 @@ tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
             else{
                 [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 [WSErrand updateErrand:[self errand] withState:2];
+                for (int i = 0; i< [[self.errand containers] count]; i++) {
+                    Container* container = [[self.errand containers] objectAtIndex:i];
+                    
+                    
+                    NSString *url = [NSString stringWithFormat:@"http://inovea.herobo.com/webhost/container.php?tag=update&idContainer=%d&name=%@&lat=%f&lng=%f&state=%d&lastCollect=%@&address=%@&idErrand=1", container.idd, container.name, container.lat, container.lng, container.contState, container.lastCollect,container.address];
+                    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    
+                    [WebService getResultWithUrl:url];
+                    
+                    NSLog(@"%@", url);
+                }
+
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 int count = [self.navigationController.viewControllers count];
                 [self.navigationController popToViewController: [self.navigationController.viewControllers objectAtIndex:count-3] animated:NO];
